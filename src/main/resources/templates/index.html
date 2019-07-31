@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>🛏Picuang - 永久免费 | 免登录图床</title>
+    <link rel="icon" href="/favicon.png">
+
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/cover.css" rel="stylesheet">
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/clipboard.js"></script>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">必床 Picuang</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="">上传</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">永久免费 | 免登录图床</h1>
+                <p class="lead">
+                    请将图片拖拽或点击按钮上传<br>
+                    支持同时多个上传 | 支持JPG / PNG / SVG / GIF<br>
+                    图片不会被压缩，不限制外链，永久保存
+                </p>
+                <p>
+                    图片大小限制：<span th:text="${limit}"></span>
+                </p>
+                <p class="lead">
+                    <a class="btn btn-lg btn-default" href="javascript:void(0)" id="select">选择图片</a>
+                    <input accept="image/jpg,image/jpeg,image/png,image/gif,image/svg,image/svg+xml" id="upload"
+                           multiple
+                           name="file"
+                           onchange="upload()" style="display: none" type="file">
+                </p>
+
+                <div id="status"></div>
+
+                <br>
+
+                <div id="clipboardStatus"></div>
+
+                <div class="alert alert-success" id="dragToUploadInformation" role="alert"
+                     style="display: none; text-shadow: none;">松手上传
+                </div>
+
+                <div class="progress" style="height: 2px">
+                    <div class="progress-bar progress-bar-success" id="bar1" style="width: 0%">
+                    </div>
+                    <div class="progress-bar progress-bar-warning" id="bar2" style="width: 0%">
+                    </div>
+                    <div class="progress-bar progress-bar-danger" id="bar3" style="width: 0%">
+                    </div>
+                </div>
+
+                <div class="row" id="links" style="display: none;">
+                    <div id="appendLinks"></div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>
+                        <script type="text/javascript" src="https://js.users.51.la/20181641.js"></script>
+                        <br>
+                        <a href="http://beian.miit.gov.cn" style="text-decoration: none;"
+                           target="_blank">京ICP备18063791号</a>
+                        <br>
+                        <a href="https://github.com/AdlerED" style="text-decoration: none;" target="_blank"><strong>GitHub:
+                            AdlerED</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/user/clipboard-control.js"></script>
+<script src="/js/user/click-listen.js"></script>
+<script src="/js/user/common-queue.js"></script>
+<script src="/js/user/drag-and-drop.js"></script>
+<script src="/js/axios.min.js"></script>
+<script src="/js/fantastic-progress-bar-bootstrap.js"></script>
+</body>
+</html>
