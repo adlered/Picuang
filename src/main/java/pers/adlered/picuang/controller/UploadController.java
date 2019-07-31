@@ -27,6 +27,7 @@ public class UploadController {
         String fileName = file.getOriginalFilename();
         System.out.println("Filename: " + fileName);
         String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        suffixName = suffixName.toLowerCase();
         if (suffixName.equals(".jpeg") || suffixName.equals(".jpg") || suffixName.equals(".png") || suffixName.equals(".gif") || suffixName.equals(".svg")) {
             result.setData(fileName);
             String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/uploadImages/";

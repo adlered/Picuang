@@ -19,6 +19,7 @@ function upload() {
             var file = document.getElementById("upload").files[i];
             suffixName = file.name.split(".");
             suffixName = suffixName[suffixName.length - 1];
+            suffixName = suffixName.toLowerCase();
             if (suffixName == "jpeg" || suffixName == "jpg" || suffixName == "png" || suffixName == "gif" || suffixName == "svg") {
                 uploadToServer(file);
             } else {

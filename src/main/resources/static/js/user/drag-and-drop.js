@@ -18,6 +18,7 @@ $(function () {
         for (var i = 0; i < fs.length; i++) {
             suffixName = fs[i].name.split(".");
             suffixName = suffixName[suffixName.length - 1];
+            suffixName = suffixName.toLowerCase();
             if (suffixName == "jpeg" || suffixName == "jpg" || suffixName == "png" || suffixName == "gif" || suffixName == "svg") {
                 uploadToServer(fs[i]);
             } else {
