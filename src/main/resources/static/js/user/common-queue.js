@@ -33,46 +33,52 @@ function uploadToServer(file) {
         console.log("Generating new Token...");
         sourceAll = axios.CancelToken.source();
     }
-    var param = new FormData();
-    param.append('file', file);
-    var config = {
-        headers: {'Content-Type': 'multipart/form-data'},
-        onUploadProgress: function (progressEvent) {
-            if (progressEvent.lengthComputable) {
-                progress = progressEvent.loaded / progressEvent.total * 100 | 0;
-                $("#status").html('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
-                change(progress);
-            }
-        },
-        cancelToken: sourceAll.token
-    };
-    ++queue;
-    ++tempCount;
-    axios.post('/upload', param, config)
-        .then(function (response) {
-            change(0);
-            responseHandler(response);
-            --queue;
-            if (queue == 0) {
-                $("#status").html("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
-                tempCount = 0;
-            }
-            sourceAll = undefined;
-        })
-        .catch(function (reason) {
-            if (axios.isCancel(reason)) {
-                console.log('Request canceled', reason.message);
-            } else {
+    size = parseInt(((file.size / 1024)  / 1024).toFixed(1));
+    picLimit = parseInt($("#picLimit").text().replace("MB", ""));
+    if (size <= picLimit) {
+        var param = new FormData();
+        param.append('file', file);
+        var config = {
+            headers: {'Content-Type': 'multipart/form-data'},
+            onUploadProgress: function (progressEvent) {
+                if (progressEvent.lengthComputable) {
+                    progress = progressEvent.loaded / progressEvent.total * 100 | 0;
+                    $("#status").html('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
+                    change(progress);
+                }
+            },
+            cancelToken: sourceAll.token
+        };
+        ++queue;
+        ++tempCount;
+        axios.post('/upload', param, config)
+            .then(function (response) {
                 change(0);
-                $("#status").html("您的图片大小超过限制:(");
+                responseHandler(response);
                 --queue;
                 if (queue == 0) {
-                    $("#status").html("<strong>" + tempCount + "张</strong> 图片部分传输成功。（部分图片大小超过限制）");
+                    $("#status").html("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
                     tempCount = 0;
                 }
-            }
-            sourceAll = undefined;
-        });
+                sourceAll = undefined;
+            })
+            .catch(function (reason) {
+                if (axios.isCancel(reason)) {
+                    console.log('Request canceled', reason.message);
+                } else {
+                    change(0);
+                    $("#status").html("您的图片大小超过限制:(");
+                    --queue;
+                    if (queue == 0) {
+                        $("#status").html("<strong>" + tempCount + "张</strong> 图片部分传输成功。（部分图片大小超过限制）");
+                        tempCount = 0;
+                    }
+                }
+                sourceAll = undefined;
+            });
+    } else {
+        alert(file.name + " 文件大小为" + size + "MB，超过限制的" + picLimit + "MB，将跳过传输！（其它图片不受影响）");
+    }
 }
 
 function responseHandler(response) {
