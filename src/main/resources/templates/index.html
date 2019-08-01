@@ -40,7 +40,10 @@
                 </p>
                 <p>
                     图片大小限制：<span id="picLimit" th:text="${limit}"></span>
-                </p>
+                    <br>
+                    为用户累计永久存储图片：<span th:text="${files}"></span>张
+                    <br>
+                    服务器剩余空间：<span th:text="${free}"></span>GB
                 <p class="lead">
                     <a class="btn btn-lg btn-default" href="javascript:void(0)" id="select">选择图片</a>
                     <input accept="image/jpg,image/jpeg,image/png,image/gif,image/svg,image/svg+xml" id="upload"
