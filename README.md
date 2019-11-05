@@ -1,9 +1,16 @@
 # Picuang
+
 :pushpin: 本地图床，使用SpringBoot开发，面向用户的网络图床服务。https://pic.stackoverflow.wiki
 
 :wrench: 如果你遇到任何问题，都可以通过我个人签名中的联系方式与我沟通！
 
 :bookmark: Picuang使用MIT协议，您可以自由进行个人/商业使用，但因各种原因造成的后果~~雨我无瓜~~请自行承担。
+
+# 功能
+
+- [x] 选择、拖拽或粘贴图片，自动上传至Picuang服务器中
+
+- [ ] 图片链接克隆（转存）功能，可输入图片的URL，Picuang会自动下载并保存到Picuang服务器中（即将完成）
 
 # :globe_with_meridians: 使用技术
 
@@ -32,6 +39,14 @@ String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "st
 ```
 
 Picuang读取了当前网站的根目录。由于项目使用了Thymeleaf，所以`static`是存储静态资源的根目录。
+
+### 打包为war
+
+* Picuang可在Tomcat上运行，[在这里下载已经打包好的war包，部署到Tomcat中](https://github.com/AdlerED/Picuang/releases)
+
+* 如果你想自己修改Picuang的源码，Clone后在Intellij IDEA中运行，使用Maven - install打包新的war包，新的war包位置在一般在`target`目录中。如图所示：
+
+![image.png](https://pic.stackoverflow.wiki/uploadImages/bce0a4b4-bd34-4e63-a3a5-74d898a9dd63.png)
 
 ### :heavy_plus_sign: 调整上传文件大小限制
 
