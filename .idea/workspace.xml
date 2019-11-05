@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: 日常更新">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564561521581</updated>
       <workItem from="1564561522976" duration="63000" />
-      <workItem from="1572961449552" duration="7247000" />
+      <workItem from="1572961449552" duration="7521000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572968733959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=":star: 日常更新">
+      <created>1572969053486</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572969053486</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
