@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="picuang:war">
+  <artifact type="war" build-on-make="true" name="picuang:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>

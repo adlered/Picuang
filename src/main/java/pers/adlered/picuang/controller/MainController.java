@@ -20,7 +20,13 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView("index");
         //图片总数计算
         String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/uploadImages/";
-        modelAndView.addObject("files", new File(path).listFiles().length);
+        try {
+            modelAndView.addObject("files", new File(path).listFiles().length);
+        } catch (NullPointerException NPE) {
+            System.out.println("Welcome to use Picuang, generating new directory...");
+            File file = new File(path);
+            file.mkdirs();
+        }
         //剩余空间计算
         File diskPartition = new File("/");
         String freePartitionSpace = new DecimalFormat("#.00").format(diskPartition.getFreeSpace() / 1073741824);
