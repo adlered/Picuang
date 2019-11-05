@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/picuang_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/picuang_war_exploded.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -176,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564561521581</updated>
       <workItem from="1564561522976" duration="63000" />
-      <workItem from="1572961449552" duration="6117000" />
+      <workItem from="1572961449552" duration="6648000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -185,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572966684055</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=":star: 日常更新">
+      <created>1572968092309</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572968092310</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +208,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题" />
+    <MESSAGE value=":star: 日常更新" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: 日常更新" />
   </component>
 </project>
