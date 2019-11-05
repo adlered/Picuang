@@ -16,6 +16,8 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 
 - [x] 选择、拖拽或粘贴图片，自动上传至Picuang服务器中
 
+- [x] 自动生成图片对应的`URL格式链接`、`HTML标签格式链接`、`Markdown格式链接`
+
 - [ ] 图片链接克隆（转存）功能，可输入图片的URL，Picuang会自动下载并保存到Picuang服务器中（即将完成）
 
 # :globe_with_meridians: 使用技术
