@@ -10,6 +10,19 @@ function stopUploadThreads() {
     queue = 0;
 }
 
+function clone() {
+    var link = $("#picURL").val();
+    $("#status").text("正在提交克隆请求至服务器...");
+    var param = new FormData();
+    param.append('url', link);
+    axios.post('/clone', param, {})
+        .then(function (response) {
+                $("#status").html("克隆成功！");
+                responseHandler(response);
+            }
+        );
+}
+
 function upload() {
     if (document.getElementById("upload").files.length == 0) {
         $("#status").text("请选择图片！");
@@ -34,7 +47,7 @@ function uploadToServer(file) {
         console.log("Generating new Token...");
         sourceAll = axios.CancelToken.source();
     }
-    size = parseInt(((file.size / 1024)  / 1024).toFixed(1));
+    size = parseInt(((file.size / 1024) / 1024).toFixed(1));
     picLimit = parseInt($("#picLimit").text().replace("MB", ""));
     if (size <= picLimit) {
         var param = new FormData();

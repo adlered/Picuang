@@ -20,13 +20,17 @@ document.getElementsByTagName('html')[0].addEventListener('paste', function (e) 
         if (filename !== null) {
             if (!(filename.search("[^*|\\:\"<>?/]+\\.[^*|\\:\"<>?/\u4E00-\u9FA5]+"))) {
                 // 有文件名
-                console.log("有文件名");
-                file = new File([file], filename, {type: file.type});
-            } else {
-                console.log("无文件名");
+                try {
+                    file = new File([file], filename, {type: file.type});
+                } catch (e) {
+                    if (file.name != null) {
+                        alert(file.name + " 格式不受支持，将跳过该图片的上传。");
+                    } else {
+                        alert(filename + " 格式不受支持，将跳过该图片的上传。");
+                    }
+                }
             }
         }
-        console.log("最终文件名：" + file.name);
         uploadToServer(file);
     }, 400);
 });

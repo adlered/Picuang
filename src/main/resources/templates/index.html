@@ -44,6 +44,8 @@
                     为用户累计永久存储图片：<span th:text="${files}"></span>张
                     <br>
                     服务器剩余空间：<span th:text="${free}"></span>GB
+                </p>
+
                 <p class="lead">
                     <a class="btn btn-lg btn-default" href="javascript:void(0)" id="select">选择图片</a>
                     <input accept="image/jpg,image/jpeg,image/png,image/gif,image/svg,image/svg+xml" id="upload"
@@ -51,6 +53,19 @@
                            name="file"
                            onchange="upload()" style="display: none" type="file">
                 </p>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input id="picURL" type="text" class="form-control" placeholder="输入图片URL链接，一键转存至Picuang图床">
+                            <span class="input-group-btn">
+                                 <button onclick="clone()" class="btn btn-default" type="button">Clone!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
 
                 <div id="status"></div>
 
