@@ -35,4 +35,11 @@ public class MainController {
         modelAndView.addObject("limit", maxFileSize);
         return modelAndView;
     }
+
+    @RequestMapping("/history")
+    @ResponseBody
+    public ModelAndView history() {
+        ModelAndView modelAndView = new ModelAndView("history");
+        return modelAndView;
+    }
 }

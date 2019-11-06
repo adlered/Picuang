@@ -106,7 +106,6 @@ function responseHandler(response) {
         case 200:
             filename = response.data.data;
             fullLocation = location.origin + msg;
-            //$("#status").html("<strong>成功！轻击打开 </strong><a style='text-decoration: none;' href='" + fullLocation + "' target='_blank'>" + fullLocation + "</a>");
             appendLink(fullLocation, "<img alt=\"" + filename + "\" src=\"" + fullLocation + "\">", "![" + filename + "](" + fullLocation + ")");
             $("#links").css("display", "block");
             break;
@@ -123,7 +122,7 @@ var count = 0;
 
 function appendLink(link, tag, markdown) {
     ++count;
-    $("#appendLinks").prepend("<br><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\">" +
+    $("#appendLinks").prepend("<br><div id='entry" + count + "'><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\">" +
         "<div class='col-lg-12' style='margin-top: 12px;'>\n" +
         "    <div class='input-group'>\n" +
         "        <span class='input-group-addon' style='text-shadow: none'><span class='glyphicon glyphicon-link' aria-hidden='true'></span></span>\n" +
@@ -150,5 +149,7 @@ function appendLink(link, tag, markdown) {
         "         <button id='copyMarkdown' data-clipboard-target='#outInMarkdown" + count + "' class='copies btn btn-warning' type='button'><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>\n" +
         "        </span>\n" +
         "    </div>\n" +
-        "</div>\n")
+        "</div></div>\n");
+    $("#entry" + count).hide();
+    $("#entry" + count).fadeIn('slow');
 }

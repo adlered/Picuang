@@ -11,7 +11,6 @@ import pers.adlered.picuang.tool.ToolBox;
 import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,9 +28,8 @@ public class UploadController {
     public Result upload(@PathVariable MultipartFile file, HttpServletRequest request) {
         synchronized (this) {
             uploadLimiter.setExpireTimeMilli(500);
-            String addr = request.getRemoteAddr();
+            String addr = request.getRemoteAddr().replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
-            System.out.println(allowed);
             Result result = new Result();
             try {
                 while (!allowed) {
@@ -50,7 +48,8 @@ public class UploadController {
             String suffixName = ToolBox.getSuffixName(filename);
             System.out.println("SuffixName: " + suffixName);
             if (ToolBox.isPic(suffixName)) {
-                File dest = ToolBox.generatePicFile(suffixName);
+                String time = ToolBox.getDirByTime();
+                File dest = ToolBox.generatePicFile(suffixName, time, addr);
                 result.setData(filename);
                 filename = dest.getName();
                 System.out.println("Saving into " + dest.getAbsolutePath());
@@ -59,7 +58,7 @@ public class UploadController {
                 }
                 try {
                     file.transferTo(dest);
-                    String url = "/uploadImages/" + filename;
+                    String url = "/uploadImages/" + addr + "/" + time + filename;
                     result.setCode(200);
                     result.setMsg(url);
                     return result;
@@ -81,7 +80,7 @@ public class UploadController {
     @ResponseBody
     public Result clone(String url, HttpServletRequest request) {
         synchronized (this) {
-            String addr = request.getRemoteAddr();
+            String addr = request.getRemoteAddr().replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = cloneLimiter.access(addr);
             try {
                 while (!allowed) {
@@ -90,22 +89,25 @@ public class UploadController {
                     Thread.sleep(100);
                 }
             } catch (InterruptedException IE) {}
-            System.out.println(allowed);
             Result result = new Result();
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 System.out.println("SuffixName: " + suffixName);
+                String time = ToolBox.getDirByTime();
                 File dest = null;
                 if (ToolBox.isPic(suffixName)) {
-                    dest = ToolBox.generatePicFile(suffixName);
+                    dest = ToolBox.generatePicFile(suffixName, time, addr);
                 } else if (suffixName.contains(".jpg") || suffixName.contains(".jpeg") || suffixName.contains(".png") || suffixName.contains(".svg") || suffixName.contains(".gif")) {
-                    dest = ToolBox.generatePicFile(".jpg");
+                    dest = ToolBox.generatePicFile(".jpg", time, addr);
                 } else {
                     result.setCode(500);
                     result.setMsg("不是jpg/jpeg/png/svg/gif图片！");
                     return result;
                 }
-                System.out.println("Saving to " + dest.getAbsolutePath());
+                System.out.println("Saving into " + dest.getAbsolutePath());
+                if (!dest.getParentFile().exists()) {
+                    dest.getParentFile().mkdirs();
+                }
                 FileOutputStream fileOutputStream = new FileOutputStream(dest);
                 BufferedInputStream bufferedInputStream = HttpOrHttpsAccess.post(url,
                         "",
@@ -123,7 +125,7 @@ public class UploadController {
                 matcher.find();
                 result.setData("From " + matcher.group());
                 result.setCode(200);
-                result.setMsg("/uploadImages/" + dest.getName());
+                result.setMsg("/uploadImages/" + addr + "/" + time + dest.getName());
                 return result;
             } catch (Exception e) {
                 result.setCode(500);

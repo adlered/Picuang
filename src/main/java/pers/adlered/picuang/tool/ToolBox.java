@@ -3,6 +3,8 @@ package pers.adlered.picuang.tool;
 import org.springframework.util.ClassUtils;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -23,9 +25,19 @@ public class ToolBox {
         return (suffixName.equals(".jpeg") || suffixName.equals(".jpg") || suffixName.equals(".png") || suffixName.equals(".gif") || suffixName.equals(".svg"));
     }
 
-    public static File generatePicFile(String suffixName) {
-        String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/uploadImages/";
+    public static String getPicStoreDir() {
+        return ClassUtils.getDefaultClassLoader().getResource("").getPath() + "static/uploadImages/";
+    }
+
+    public static File generatePicFile(String suffixName, String time, String IP) {
+        String path = getPicStoreDir() + IP + "/" + time;
         String fileName = UUID.randomUUID() + suffixName;
         return new File(path + fileName);
+    }
+
+    public static String getDirByTime() {
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/HH/mm/");
+        return simpleDateFormat.format(date);
     }
 }
