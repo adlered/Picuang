@@ -50,7 +50,7 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 
 # :mag: 预览
 
-GIF加载较慢，你也可以访问[这里](https://pic.stackoverflow.wiki/uploadImages/6a464c6a-f20c-49ea-ae85-f5400484b7d7.gif)查看（该图片也采用了我自搭建的公共Picuang图床存储）
+GIF加载较慢，你也可以访问[这里](https://pic.stackoverflow.wiki/uploadImages/125/33/189/136/2019/11/06/22/29/484ca851-88cb-4554-9444-272f218781bd.gif)查看（该图片也采用了我自搭建的公共Picuang图床存储）
 
 ![picuang2.gif](https://pic.stackoverflow.wiki/uploadImages/125/33/189/136/2019/11/06/22/29/484ca851-88cb-4554-9444-272f218781bd.gif)
 
