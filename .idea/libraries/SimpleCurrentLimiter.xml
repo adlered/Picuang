@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SimpleCurrentLimiter">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/SimpleCurrentLimiter/release/SimpleCurrentLimiter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

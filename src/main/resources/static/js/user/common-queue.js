@@ -12,13 +12,17 @@ function stopUploadThreads() {
 
 function clone() {
     var link = $("#picURL").val();
-    $("#status").text("正在提交克隆请求至服务器...");
+    $("#status").text("服务端正在克隆，请稍候...");
     var param = new FormData();
     param.append('url', link);
     axios.post('/clone', param, {})
         .then(function (response) {
-                $("#status").html("克隆成功！");
-                responseHandler(response);
+                if (response.data.code == 200) {
+                    $("#status").html("克隆成功！");
+                    responseHandler(response);
+                } else {
+                    $("#status").html("克隆失败！原因：" + response.data.msg);
+                }
             }
         );
 }
@@ -119,8 +123,8 @@ var count = 0;
 
 function appendLink(link, tag, markdown) {
     ++count;
-    $("#appendLinks").prepend("<br><br><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\">" +
-        "<div class='col-lg-12' style='padding-top: 24px;'>\n" +
+    $("#appendLinks").prepend("<br><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\">" +
+        "<div class='col-lg-12' style='margin-top: 12px;'>\n" +
         "    <div class='input-group'>\n" +
         "        <span class='input-group-addon' style='text-shadow: none'><span class='glyphicon glyphicon-link' aria-hidden='true'></span></span>\n" +
         "        <input id='outInHyperlink" + count + "' type='text' class='form-control' value='" + link + "'>\n" +
@@ -138,7 +142,7 @@ function appendLink(link, tag, markdown) {
         "        </span>\n" +
         "    </div>\n" +
         "</div>\n" +
-        "<div class='col-lg-12'>\n" +
+        "<div class='col-lg-12' style='margin-bottom: 24px;'>\n" +
         "    <div class='input-group'>\n" +
         "        <span class='input-group-addon' style='text-shadow: none'><span class='glyphicon glyphicon-bookmark' aria-hidden='true'></span></span>\n" +
         "        <input id='outInMarkdown" + count + "' type='text' class='form-control' value='" + markdown + "'>\n" +
