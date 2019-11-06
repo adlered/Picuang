@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: 增加阻塞器，上传过快会自动阻塞数秒后，自动重新上传">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/bean/PicProp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/cache/MainCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/cache/pair/CachePair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/control/MainControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/main/SimpleCurrentLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/SimpleCurrentLimiter.xml" beforeDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: V2.0">
+      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/IPUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/history/histories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/picuang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/picuang.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/ToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/ToolBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/bean/PicProp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/bean/PicProp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -200,6 +200,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Prop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pers.adlered.picuang.prop.Prop" />
+      <module name="picuang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.adlered.picuang.prop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pers.adlered.picuang.Test" />
+      <module name="picuang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.adlered.picuang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PicuangApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="picuang" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.adlered.picuang.PicuangApplication" />
@@ -209,6 +235,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Prop" />
         <item itemvalue="Application.HttpOrHttpsAccess" />
       </list>
     </recent_temporary>
@@ -225,7 +253,9 @@
       <updated>1564561521581</updated>
       <workItem from="1564561522976" duration="63000" />
       <workItem from="1572961449552" duration="7706000" />
-      <workItem from="1573002873605" duration="24702000" />
+      <workItem from="1573002873605" duration="25013000" />
+      <workItem from="1573041669754" duration="5803000" />
+      <workItem from="1573047594393" duration="2752000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -290,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573024817969</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=":star: 历史记录API">
+      <created>1573034074908</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573034074908</updated>
+    </task>
+    <task id="LOCAL-00011" summary=":star: Update README">
+      <created>1573034202459</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573034202459</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +361,8 @@
     <MESSAGE value=":star: 日常更新" />
     <MESSAGE value=":star: 克隆功能完成" />
     <MESSAGE value=":star: 增加阻塞器，上传过快会自动阻塞数秒后，自动重新上传" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: 增加阻塞器，上传过快会自动阻塞数秒后，自动重新上传" />
+    <MESSAGE value=":star: 历史记录API" />
+    <MESSAGE value=":star: Update README" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: Update README" />
   </component>
 </project>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.controller.api.bean.PicProp;
+import pers.adlered.picuang.tool.IPUtil;
 import pers.adlered.picuang.tool.ToolBox;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +37,11 @@ public class History {
                     try {
                         for (File k : files) {
                             if (k.isFile()) {
-                                System.out.println(k.getAbsolutePath());
                                 PicProp picProp = new PicProp();
                                 picProp.setTime(i.getName() + ":" + j.getName());
                                 picProp.setFilename(k.getName());
+                                picProp.setPath("/uploadImages/" + IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/") + "/" + year + "/" + month + "/" + day + "/" + i.getName() + "/" + j.getName() + "/" + k.getName());
+                                picProp.setIp(IPUtil.getIpAddr(request));
                                 list.add(picProp);
                             }
                         }
@@ -65,7 +67,8 @@ public class History {
                     lists.add(i.getName());
                 }
             }
-        } catch (NullPointerException NPE) {}
+        } catch (NullPointerException NPE) {
+        }
         return lists;
     }
 
@@ -82,7 +85,8 @@ public class History {
                     lists.add(i.getName());
                 }
             }
-        } catch (NullPointerException NPE) {}
+        } catch (NullPointerException NPE) {
+        }
         return lists;
     }
 
@@ -93,16 +97,19 @@ public class History {
         File file = new File(getHome(request));
         File[] list = file.listFiles();
         List<String> lists = new ArrayList<>();
-        for (File i : list) {
-            if (i.isDirectory()) {
-                lists.add(i.getName());
+        try {
+            for (File i : list) {
+                if (i.isDirectory()) {
+                    lists.add(i.getName());
+                }
             }
+        } catch (NullPointerException NPE) {
         }
         return lists;
     }
 
     private String getHome(HttpServletRequest request) {
-        String addr = request.getRemoteAddr().replaceAll("\\.", "/").replaceAll(":", "/");
+        String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
         return ToolBox.getPicStoreDir() + addr + "/";
     }
 }

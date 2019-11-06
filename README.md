@@ -20,9 +20,9 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 
 - [x] 图片链接克隆（转存）功能，可输入图片的URL，Picuang会自动下载并保存到Picuang服务器中
 
-- [x] 单IP上传阻流器，上传过快会排队上传，减轻服务器压力，防止恶意上传/克隆攻击
+- [x] 单IP上传自动阻流器，上传过快会排队上传，减轻服务器压力，防止恶意上传/克隆攻击
 
-- [ ] 历史记录功能（按IP地址读取，所以更换IP地址后无法查询）
+- [x] 历史记录功能（按IP地址读取，所以更换IP地址后无法查询）
 
 - [ ] Picuang管理员后台设置界面（基于配置文件存储，不依赖数据库）
 
@@ -52,7 +52,7 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 
 GIF加载较慢，你也可以访问[这里](https://pic.stackoverflow.wiki/uploadImages/6a464c6a-f20c-49ea-ae85-f5400484b7d7.gif)查看（该图片也采用了我自搭建的公共Picuang图床存储）
 
-![demo.gif](https://pic.stackoverflow.wiki/uploadImages/6a464c6a-f20c-49ea-ae85-f5400484b7d7.gif)
+![picuang2.gif](https://pic.stackoverflow.wiki/uploadImages/125/33/189/136/2019/11/06/22/29/484ca851-88cb-4554-9444-272f218781bd.gif)
 
 # :page_facing_up: 使用方法
 

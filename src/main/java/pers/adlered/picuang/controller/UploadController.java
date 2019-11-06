@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import pers.adlered.picuang.access.HttpOrHttpsAccess;
+import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
+import pers.adlered.picuang.tool.IPUtil;
 import pers.adlered.picuang.tool.ToolBox;
 import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
@@ -28,7 +30,7 @@ public class UploadController {
     public Result upload(@PathVariable MultipartFile file, HttpServletRequest request) {
         synchronized (this) {
             uploadLimiter.setExpireTimeMilli(500);
-            String addr = request.getRemoteAddr().replaceAll("\\.", "/").replaceAll(":", "/");
+            String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();
             try {
@@ -61,6 +63,9 @@ public class UploadController {
                     String url = "/uploadImages/" + addr + "/" + time + filename;
                     result.setCode(200);
                     result.setMsg(url);
+                    int count = Integer.parseInt(Prop.get("imageUploadedCount"));
+                    ++count;
+                    Prop.set("imageUploadedCount", String.valueOf(count));
                     return result;
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -80,7 +85,7 @@ public class UploadController {
     @ResponseBody
     public Result clone(String url, HttpServletRequest request) {
         synchronized (this) {
-            String addr = request.getRemoteAddr().replaceAll("\\.", "/").replaceAll(":", "/");
+            String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = cloneLimiter.access(addr);
             try {
                 while (!allowed) {
@@ -126,6 +131,9 @@ public class UploadController {
                 result.setData("From " + matcher.group());
                 result.setCode(200);
                 result.setMsg("/uploadImages/" + addr + "/" + time + dest.getName());
+                int count = Integer.parseInt(Prop.get("imageUploadedCount"));
+                ++count;
+                Prop.set("imageUploadedCount", String.valueOf(count));
                 return result;
             } catch (Exception e) {
                 result.setCode(500);
