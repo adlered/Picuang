@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: V2.0">
-      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/IPUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/history/histories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/bean/PicProp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/bean/PicProp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +240,7 @@
       <workItem from="1572961449552" duration="7706000" />
       <workItem from="1573002873605" duration="25013000" />
       <workItem from="1573041669754" duration="5803000" />
-      <workItem from="1573047594393" duration="2752000" />
+      <workItem from="1573047594393" duration="3015000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -334,7 +319,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573034202459</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=":star: V2.0版本正式发布！">
+      <created>1573050596988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1573050596989</updated>
+    </task>
+    <task id="LOCAL-00013" summary=":star: V2.0版本正式发布！">
+      <created>1573050623501</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1573050623501</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +362,7 @@
     <MESSAGE value=":star: 增加阻塞器，上传过快会自动阻塞数秒后，自动重新上传" />
     <MESSAGE value=":star: 历史记录API" />
     <MESSAGE value=":star: Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: Update README" />
+    <MESSAGE value=":star: V2.0版本正式发布！" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: V2.0版本正式发布！" />
   </component>
 </project>
