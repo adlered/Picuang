@@ -24,9 +24,9 @@ document.getElementsByTagName('html')[0].addEventListener('paste', function (e) 
                     file = new File([file], filename, {type: file.type});
                 } catch (e) {
                     if (file.name != null) {
-                        alert(file.name + " 格式不受支持，将跳过该图片的上传。");
+                        sendInnerNotify(file.name + " 格式不受支持，将跳过该图片的上传。");
                     } else {
-                        alert(filename + " 格式不受支持，将跳过该图片的上传。");
+                        sendInnerNotify(filename + " 格式不受支持，将跳过该图片的上传。");
                     }
                 }
             }

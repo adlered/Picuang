@@ -19,7 +19,7 @@ public class Prop {
             properties.load(new BufferedInputStream(new FileInputStream("config.ini")));
         } catch (FileNotFoundException e) {
             properties.put("imageUploadedCount", "0");
-            properties.put("version", "V2.0");
+            properties.put("version", "V2.1");
             try {
                 properties.store(new BufferedOutputStream(new FileOutputStream("config.ini")), "Save Configs File.");
             } catch (FileNotFoundException FNFE) {
@@ -39,7 +39,7 @@ public class Prop {
     public static void set(String key, String value) {
         try {
             properties.setProperty(key, value);
-            System.out.println("[Prop] set key '" + key + "' to value '" + value + "'");
+            System.out.println("[Prop] Set key '" + key + "' to value '" + value + "'");
             PrintWriter printWriter = new PrintWriter(new FileWriter("config.ini"), true);
             Set set = properties.keySet();
             for (Object object : set) {

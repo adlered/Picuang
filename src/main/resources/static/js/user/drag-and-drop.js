@@ -1,9 +1,9 @@
 $(function () {
     var oDiv = $("html").get(0);
     oDiv.ondragenter = function () {
-        $("#dragToUploadInformation").css("display", "block");
+        $("#dragToUploadInformation").show(1000);
         setTimeout(function () {
-            $("#dragToUploadInformation").css("display", "none");
+            $("#dragToUploadInformation").hide(1000);
         }, 2000);
     };
     oDiv.ondragover = function (e) {
@@ -22,7 +22,7 @@ $(function () {
             if (suffixName == "jpeg" || suffixName == "jpg" || suffixName == "png" || suffixName == "gif" || suffixName == "svg") {
                 uploadToServer(fs[i]);
             } else {
-                alert(fs[i].name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
+                sendInnerNotify(fs[i].name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
             }
         }
     }

@@ -4,7 +4,7 @@ sourceAll = undefined;
 
 function stopUploadThreads() {
     sourceAll.cancel('Operation canceled by the user.');
-    $("#status").html("");
+    sendStatus("");
     change(0);
     tempCount = 0;
     queue = 0;
@@ -18,11 +18,11 @@ function clone() {
     axios.post('/clone', param, {})
         .then(function (response) {
                 if (response.data.code == 200) {
-                    $("#status").html("克隆成功！");
+                    sendStatus("克隆成功！");
                     sendNotify("图片克隆已完成。");
                     responseHandler(response);
                 } else {
-                    $("#status").html("克隆失败！原因：" + response.data.msg);
+                    sendStatus("克隆失败！原因：" + response.data.msg);
                     sendNotify("图片克隆失败。");
                 }
             }
@@ -42,7 +42,7 @@ function upload() {
             if (suffixName == "jpeg" || suffixName == "jpg" || suffixName == "png" || suffixName == "gif" || suffixName == "svg") {
                 uploadToServer(file);
             } else {
-                alert(file.name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
+                sendInnerNotify(file.name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
             }
         }
     }
@@ -63,7 +63,7 @@ function uploadToServer(file) {
             onUploadProgress: function (progressEvent) {
                 if (progressEvent.lengthComputable) {
                     progress = progressEvent.loaded / progressEvent.total * 100 | 0;
-                    $("#status").html('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
+                    sendStatus('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
                     change(progress);
                 }
             },
@@ -75,10 +75,11 @@ function uploadToServer(file) {
             .then(function (response) {
                 change(0);
                 responseHandler(response);
+                sendStatus('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
                 --queue;
                 if (queue == 0) {
                     sendNotify(tempCount + "张图片已上传成功。");
-                    $("#status").html("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
+                    sendStatus("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
                     tempCount = 0;
                 }
                 sourceAll = undefined;
@@ -88,18 +89,18 @@ function uploadToServer(file) {
                     console.log('Request canceled', reason.message);
                 } else {
                     change(0);
-                    $("#status").html("您的图片大小超过限制:(");
+                    sendStatus("您的图片大小超过限制:(");
                     --queue;
                     if (queue == 0) {
                         sendNotify(tempCount + "张图片已上传成功，部分图片超出大小限制。");
-                        $("#status").html("<strong>" + tempCount + "张</strong> 图片部分传输成功。（部分图片大小超过限制）");
+                        sendStatus("<strong>" + tempCount + "张</strong> 图片部分传输成功。（部分图片大小超过限制）");
                         tempCount = 0;
                     }
                 }
                 sourceAll = undefined;
             });
     } else {
-        alert(file.name + " 文件大小为" + size + "MB，超过限制的" + picLimit + "MB，将跳过传输！（其它图片不受影响）");
+        sendInnerNotify(file.name + " 文件大小为" + size + "MB，超过限制的" + picLimit + "MB，将跳过传输！（其它图片不受影响）");
     }
 }
 
@@ -114,10 +115,10 @@ function responseHandler(response) {
             $("#links").css("display", "block");
             break;
         case 406:
-            $("#status").html("未选择图片，请重试。");
+            sendStatus("未选择图片，请重试。");
             break;
         case 500:
-            $("#status").html("图片错误，服务器拒绝解析！请检查图片格式。");
+            sendStatus("图片错误，服务器拒绝解析！请检查图片格式。");
             break;
     }
 }
