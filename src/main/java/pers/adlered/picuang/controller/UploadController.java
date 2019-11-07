@@ -103,7 +103,7 @@ public class UploadController {
                 if (ToolBox.isPic(suffixName)) {
                     dest = ToolBox.generatePicFile(suffixName, time, addr);
                 } else {
-                    dest = ToolBox.generatePicFile(".jpg", time, addr);
+                    dest = ToolBox.generatePicFile(".png", time, addr);
                 }
                 System.out.println("Saving into " + dest.getAbsolutePath());
                 if (!dest.getParentFile().exists()) {

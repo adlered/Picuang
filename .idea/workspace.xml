@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" afterDir="false" />
-    </list>
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +246,7 @@
       <workItem from="1573041669754" duration="5803000" />
       <workItem from="1573047594393" duration="3482000" />
       <workItem from="1573091947508" duration="7920000" />
-      <workItem from="1573102393020" duration="951000" />
+      <workItem from="1573102393020" duration="1250000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -390,7 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573103507540</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="JS增加BMP/ICO/TIFF Content-Type">
+      <created>1573103672287</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1573103672287</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Class增加BMP/ICO/TIFF Content-Type">
+      <created>1573103737313</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1573103737313</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,6 +438,8 @@
     <MESSAGE value="删除config.ini，增加gitignore" />
     <MESSAGE value="增加Inner Notification" />
     <MESSAGE value="增加BMP/ICO/TIFF Content-Type" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加BMP/ICO/TIFF Content-Type" />
+    <MESSAGE value="JS增加BMP/ICO/TIFF Content-Type" />
+    <MESSAGE value="Class增加BMP/ICO/TIFF Content-Type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class增加BMP/ICO/TIFF Content-Type" />
   </component>
 </project>
