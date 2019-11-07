@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -254,7 +256,7 @@
       <workItem from="1573113838800" duration="279000" />
       <workItem from="1573117420352" duration="3357000" />
       <workItem from="1573128423523" duration="3898000" />
-      <workItem from="1573134211645" duration="5750000" />
+      <workItem from="1573134211645" duration="6291000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -473,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573138956744</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="admin-btn">
+      <created>1573140029736</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1573140029736</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,6 +529,7 @@
     <MESSAGE value="回车执行" />
     <MESSAGE value="后台管理、修改累计上传图片数量、修改管理员密码" />
     <MESSAGE value="QA" />
-    <option name="LAST_COMMIT_MESSAGE" value="QA" />
+    <MESSAGE value="admin-btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin-btn" />
   </component>
 </project>

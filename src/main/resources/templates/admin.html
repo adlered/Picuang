@@ -44,7 +44,7 @@
                         <div class="config-buttons">
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default">导出配置</button>
+                                    <button type="button" class="btn btn-default" onclick="exportConfig()">导出配置</button>
                                 </div>
                                 <div class="btn-group" role="group">
                                     <button type="button" class="btn btn-primary">仅允许管理员上传 (当前：否)</button>
@@ -69,6 +69,10 @@
             </div>
 
             <script>
+                function exportConfig() {
+                    window.open("/api/admin/export");
+                }
+
                 $(function () {
                     axios.get('/api/admin/init')
                         .then(function (response) {

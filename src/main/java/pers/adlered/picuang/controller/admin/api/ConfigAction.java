@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
+import pers.adlered.picuang.tool.FileUtil;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -57,5 +59,13 @@ public class ConfigAction {
         } catch (NullPointerException NPE) {
         }
         return logged;
+    }
+
+    @RequestMapping("/api/admin/export")
+    @ResponseBody
+    public void export(HttpServletResponse response) {
+        String fileName = "config.ini";
+        String result = FileUtil.downloadFile(response, fileName);
+        System.out.println(result);
     }
 }
