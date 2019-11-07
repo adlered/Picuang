@@ -22,7 +22,7 @@ $(function () {
             if (suffixName === "jpeg" || suffixName === "jpg" || suffixName === "png" || suffixName === "gif" || suffixName === "svg" || suffixName === "bmp" || suffixName === "ico" || suffixName === "tiff") {
                 uploadToServer(fs[i]);
             } else {
-                sendInnerNotify(fs[i].name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
+                sendInnerNotify(fs[i].name + " 格式不受支持，将跳过该图片的上传。");
             }
         }
     }

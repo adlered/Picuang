@@ -42,7 +42,7 @@ function upload() {
             if (suffixName === "jpeg" || suffixName === "jpg" || suffixName === "png" || suffixName === "gif" || suffixName === "svg" || suffixName === "bmp" || suffixName === "ico" || suffixName === "tiff") {
                 uploadToServer(file);
             } else {
-                sendInnerNotify(file.name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
+                sendInnerNotify(file.name + " 格式不受支持，将跳过该图片的上传。");
             }
         }
     }
@@ -100,7 +100,7 @@ function uploadToServer(file) {
                 sourceAll = undefined;
             });
     } else {
-        sendInnerNotify(file.name + " 文件大小为" + size + "MB，超过限制的" + picLimit + "MB，将跳过传输！（其它图片不受影响）");
+        sendInnerNotify(file.name + " 文件大小为" + size + "MB，超过限制的" + picLimit + "MB，将跳过传输！");
     }
 }
 
