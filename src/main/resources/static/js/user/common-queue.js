@@ -39,7 +39,7 @@ function upload() {
             suffixName = file.name.split(".");
             suffixName = suffixName[suffixName.length - 1];
             suffixName = suffixName.toLowerCase();
-            if (suffixName == "jpeg" || suffixName == "jpg" || suffixName == "png" || suffixName == "gif" || suffixName == "svg") {
+            if (suffixName === "jpeg" || suffixName === "jpg" || suffixName === "png" || suffixName === "gif" || suffixName === "svg" || suffixName === "bmp" || suffixName === "ico" || suffixName === "tiff") {
                 uploadToServer(file);
             } else {
                 sendInnerNotify(file.name + " 格式不受支持，将跳过该图片的上传。（其它图片不受影响）");
