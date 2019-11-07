@@ -19,9 +19,11 @@ function clone() {
         .then(function (response) {
                 if (response.data.code == 200) {
                     $("#status").html("克隆成功！");
+                    sendNotify("图片克隆已完成。");
                     responseHandler(response);
                 } else {
                     $("#status").html("克隆失败！原因：" + response.data.msg);
+                    sendNotify("图片克隆失败。");
                 }
             }
         );
@@ -75,6 +77,7 @@ function uploadToServer(file) {
                 responseHandler(response);
                 --queue;
                 if (queue == 0) {
+                    sendNotify(tempCount + "张图片已上传成功。");
                     $("#status").html("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
                     tempCount = 0;
                 }
@@ -88,6 +91,7 @@ function uploadToServer(file) {
                     $("#status").html("您的图片大小超过限制:(");
                     --queue;
                     if (queue == 0) {
+                        sendNotify(tempCount + "张图片已上传成功，部分图片超出大小限制。");
                         $("#status").html("<strong>" + tempCount + "张</strong> 图片部分传输成功。（部分图片大小超过限制）");
                         tempCount = 0;
                     }
