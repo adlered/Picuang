@@ -20,6 +20,7 @@ public class Prop {
         } catch (FileNotFoundException e) {
             properties.put("imageUploadedCount", "0");
             properties.put("version", "V2.2");
+            properties.put("password", "");
             try {
                 properties.store(new BufferedOutputStream(new FileOutputStream("config.ini")), "Save Configs File.");
             } catch (FileNotFoundException FNFE) {

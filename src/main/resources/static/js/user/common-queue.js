@@ -13,9 +13,7 @@ function stopUploadThreads() {
 function clone() {
     var link = $("#picURL").val();
     $("#status").text("服务端正在克隆，请稍候...");
-    var param = new FormData();
-    param.append('url', link);
-    axios.post('/clone', param, {})
+    axios.get('/clone?url=' + link)
         .then(function (response) {
                 if (response.data.code == 200) {
                     sendStatus("克隆成功！");

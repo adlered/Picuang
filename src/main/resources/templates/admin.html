@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>🛏Picuang - 永久免费 | 免登录图床</title>
-    <link rel="icon" href="/favicon.png">
+    <link href="/favicon.png" rel="icon">
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap/cover.css" rel="stylesheet">
@@ -26,20 +26,47 @@
                     <nav>
                         <ul class="nav masthead-nav">
                             <li><a href="/">上传</a></li>
-                            <li class="active"><a href="/history">历史</a></li>
+                            <li><a href="/history">历史</a></li>
+                            <li class="active"><a href="/admin">管理</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
 
             <div class="inner cover">
-
+                <div id="admin" style="margin-top: 36px; margin-bottom: 36px;">
+                    <div id="message"></div>
+                </div>
             </div>
-            
+
+            <script>
+                $(function () {
+                    axios.get('/api/admin/init')
+                        .then(function (response) {
+                                if (response.data.code === 500) {
+                                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 \"" + response.data.data + "\"<br>中 \"password\" 的值，然后重启服务端。");
+                                } else {
+                                    $("#message").html("<div class=\"row\"><div class=\"col-lg-12\"><div class=\"input-group\"><input id=\"admin-password\" class=\"form-control\" placeholder=\"请输入管理员密码\" type=\"text\"><span class=\"input-group-btn\"><button class=\"btn btn-default\" type=\"button\" onclick=\"adminLogin()\"><i class=\"glyphicon glyphicon-record\"></i></button></span></div></div></div>");
+                                    $("#admin-password").keyup(function (event) {
+                                        if (event.keyCode === 13) {
+                                            adminLogin();
+                                        }
+                                    });
+                                }
+                            }
+                        );
+                });
+
+                function adminLogin() {
+                    var password = $("#admin-password").val();
+                    alert(password);
+                }
+            </script>
+
             <div class="mastfoot">
                 <div class="inner">
                     <p>
-                        <script type="text/javascript" src="https://js.users.51.la/20181641.js"></script>
+                        <script src="https://js.users.51.la/20181641.js" type="text/javascript"></script>
                         <br>
                         <a href="http://beian.miit.gov.cn" style="text-decoration: none;"
                            target="_blank">京ICP备18063791号</a>

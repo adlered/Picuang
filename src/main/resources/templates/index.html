@@ -27,6 +27,7 @@
                         <ul class="nav masthead-nav">
                             <li class="active"><a href="/">上传</a></li>
                             <li><a href="/history">历史</a></li>
+                            <li><a href="/admin">管理</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -62,6 +63,13 @@
                             <span class="input-group-btn">
                                  <button onclick="clone()" class="btn btn-default" type="button">Clone!</button>
                             </span>
+                            <script>
+                                $("#picURL").keyup(function (event) {
+                                    if (event.keyCode === 13) {
+                                        clone();
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
