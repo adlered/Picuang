@@ -137,7 +137,7 @@ public class UploadController {
                 return result;
             } catch (Exception e) {
                 result.setCode(500);
-                result.setMsg(e.getStackTrace().toString());
+                result.setMsg(e.getClass().toGenericString());
                 return result;
             }
         }
