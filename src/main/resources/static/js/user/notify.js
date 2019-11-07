@@ -23,7 +23,7 @@ function sendInnerNotify(str) {
         title: "Picuang图床 - 提醒",
         body: str,
         inner: true,
-        icon: "/favicon.png",
+        icon: "favicon.png",
         onclick: function (data) {}
     };
     new dToast(config);
