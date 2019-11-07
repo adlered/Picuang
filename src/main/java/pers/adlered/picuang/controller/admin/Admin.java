@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import pers.adlered.picuang.prop.Prop;
 
 /**
  * <h3>picuang</h3>
@@ -19,6 +20,7 @@ public class Admin {
     @ResponseBody
     public ModelAndView admin() {
         ModelAndView modelAndView = new ModelAndView("admin");
+        modelAndView.addObject("imageUploadedCount", Prop.get("imageUploadedCount"));
         return modelAndView;
     }
 }

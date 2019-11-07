@@ -2,6 +2,7 @@ package pers.adlered.picuang.controller.admin.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
@@ -48,7 +49,8 @@ public class AdminAction {
         Result result = new Result();
         boolean logged = false;
         try {
-            logged = Boolean.parseBoolean(session.getAttribute("admin").toString());
+            String admin = session.getAttribute("admin").toString();
+            logged = Boolean.parseBoolean(admin);
         } catch (NullPointerException NPE) {
         }
         if (logged) {
@@ -60,28 +62,15 @@ public class AdminAction {
     }
 
     /**
-     * 检查管理员是否已登录
-     * @param session
-     * @return
-     */
-    public boolean logged(HttpSession session) {
-        boolean logged = false;
-        try {
-            logged = Boolean.parseBoolean(session.getAttribute("admin").toString());
-        } catch (NullPointerException NPE) {
-        }
-        return logged;
-    }
-
-    /**
      * 管理员登录
+     * 管理员登录为了安全考虑，必须使用POST方法传输
      * @param session
      * @param password
      * @return
      * 500：登录失败
      * 200：登录成功
      */
-    @RequestMapping("/api/admin/login")
+    @RequestMapping(value = "/api/admin/login", method = RequestMethod.POST)
     @ResponseBody
     public Result login(HttpSession session, String password) {
         Result result = new Result();

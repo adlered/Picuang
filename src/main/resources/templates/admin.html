@@ -25,6 +25,7 @@
                     <a href="/"><h3 class="masthead-brand">必床 Picuang</h3></a>
                     <nav>
                         <ul class="nav masthead-nav">
+                            <li id="logout" style="display: none"><a href="javascript:logout();">注销</a></li>
                             <li><a href="/">上传</a></li>
                             <li><a href="/history">历史</a></li>
                             <li class="active"><a href="/admin">管理</a></li>
@@ -36,6 +37,10 @@
             <div class="inner cover">
                 <div id="admin" style="margin-top: 36px; margin-bottom: 36px;">
                     <div id="message"></div>
+                    <div id="config" style="display: none">
+                        <div class="row" id="config-row">
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -44,14 +49,17 @@
                     axios.get('/api/admin/init')
                         .then(function (response) {
                                 if (response.data.code === 500) {
-                                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 \"" + response.data.data + "\"<br>中 \"password\" 的值，然后重启服务端。");
+                                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 '" + response.data.data + "'<br>中 'password' 的值，然后重启服务端。");
                                 } else {
-                                    $("#message").html("<div class=\"row\"><div class=\"col-lg-12\"><div class=\"input-group\"><input id=\"admin-password\" class=\"form-control\" placeholder=\"请输入管理员密码\" type=\"text\"><span class=\"input-group-btn\"><button class=\"btn btn-default\" type=\"button\" onclick=\"adminLogin()\"><i class=\"glyphicon glyphicon-record\"></i></button></span></div></div></div>");
-                                    $("#admin-password").keyup(function (event) {
-                                        if (event.keyCode === 13) {
-                                            adminLogin();
-                                        }
-                                    });
+                                    axios.get('/api/admin/check')
+                                        .then(function (response) {
+                                                if (response.data.code === 200) {
+                                                    showConfig();
+                                                } else {
+                                                    showLogin();
+                                                }
+                                            }
+                                        );
                                 }
                             }
                         );
@@ -59,7 +67,62 @@
 
                 function adminLogin() {
                     var password = $("#admin-password").val();
-                    alert(password);
+                    var data = new FormData();
+                    data.append("password", password);
+                    axios.post('/api/admin/login', data)
+                        .then(function (response) {
+                                if (response.data.code === 200) {
+                                    $("#admin-password").css("border-color", "green");
+                                    $("#admin-button").css("border-color", "green");
+                                    $("#admin-icon").removeClass();
+                                    $("#admin-icon").addClass("glyphicon glyphicon-ok");
+                                    $("#admin-password").hide(100);
+                                    $("#admin-button").hide(100);
+                                    showConfig();
+                                } else {
+                                    $("#admin-password").css("border-color", "red");
+                                    $("#admin-button").css("border-color", "red");
+                                    $("#admin-icon").removeClass();
+                                    $("#admin-icon").addClass("glyphicon glyphicon-remove");
+                                }
+                            }
+                        );
+                }
+
+                function logout() {
+                    axios.get('/api/admin/logout')
+                        .then(function (response) {
+                                location.href = "/";
+                            }
+                        );
+                }
+
+                function showLogin() {
+                    $("#message").html("<div class='row'><div class='col-lg-12'><div class='input-group'><input id='admin-password' class='form-control' placeholder='请输入管理员密码' type='text'><span class='input-group-btn'><button id='admin-button' class='btn btn-default' type='button' onclick='adminLogin()'><i id='admin-icon' class='glyphicon glyphicon-record'></i></button></span></div></div></div>");
+                    $("#admin-password").keyup(function (event) {
+                        if (event.keyCode === 13) {
+                            adminLogin();
+                        }
+                    });
+                }
+
+                function showConfig() {
+                    axios.get('/api/admin/getConf?conf=imageUploadedCount')
+                        .then(function (response) { 
+                            $("#config-row").append("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>累计存储图片数量</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
+                        });
+                    axios.get('/api/admin/getConf?conf=password')
+                        .then(function (response) {
+                            $("#config-row").append("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>修改管理员密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
+                        });
+                    $("#logout").fadeIn(200);
+                    $("#config").fadeIn(100);
+                }
+
+                function editConfig(sheet) {
+                    var value = $("#" + sheet + "-input").val();
+                    axios.get('/api/admin/setConf?conf=' + sheet + '&value=' + value);
+                    sendInnerNotify(sheet + " 的值已成功修改为：" + value);
                 }
             </script>
 
@@ -84,6 +147,8 @@
 <script src="/js/user/common-queue.js"></script>
 <script src="/js/user/drag-and-drop.js"></script>
 <script src="/js/user/on-paste.js"></script>
+<script src="/js/user/notify.js"></script>
+<script src="/js/d-toast.min.js"></script>
 <script src="/js/axios.min.js"></script>
 <script src="/js/fantastic-progress-bar-bootstrap.js"></script>
 </body>
