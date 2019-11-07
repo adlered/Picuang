@@ -22,7 +22,7 @@ public class ToolBox {
     }
 
     public static boolean isPic(String suffixName) {
-        return (suffixName.equals(".jpeg") || suffixName.equals(".jpg") || suffixName.equals(".png") || suffixName.equals(".gif") || suffixName.equals(".svg"));
+        return (suffixName.equals(".jpeg") || suffixName.equals(".jpg") || suffixName.equals(".png") || suffixName.equals(".gif") || suffixName.equals(".svg") || suffixName.equals(".bmp") || suffixName.equals(".ico") || suffixName.equals(".tiff"));
     }
 
     public static String getPicStoreDir() {
