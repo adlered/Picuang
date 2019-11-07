@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="站内提醒favicon">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-    </list>
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +246,7 @@
       <workItem from="1573041669754" duration="5803000" />
       <workItem from="1573047594393" duration="3482000" />
       <workItem from="1573091947508" duration="7920000" />
-      <workItem from="1573102393020" duration="2036000" />
+      <workItem from="1573102393020" duration="2312000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -426,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573104289803</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="自V1.2版本开始，Picuang使用Apache License">
+      <created>1573104751881</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1573104751881</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改版本号">
+      <created>1573104828370</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1573104828370</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,6 +478,8 @@
     <MESSAGE value="Clone默认后缀从jpg修改为png" />
     <MESSAGE value="去掉“其它图片不受影响”" />
     <MESSAGE value="站内提醒favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="站内提醒favicon" />
+    <MESSAGE value="自V2.2版本开始，Picuang使用Apache License" />
+    <MESSAGE value="修改版本号" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改版本号" />
   </component>
 </project>

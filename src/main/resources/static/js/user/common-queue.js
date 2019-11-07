@@ -127,7 +127,7 @@ var count = 0;
 
 function appendLink(link, tag, markdown) {
     ++count;
-    $("#appendLinks").prepend("<br><div id='entry" + count + "'><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\">" +
+    $("#appendLinks").prepend("<br><div id='entry" + count + "'><a href='" + link + "' target='_blank'><img src='" + link + "' style='width: auto; height: auto; max-width: 192px; max-height: 192px;' class=\"img-thumbnail\"></a>" +
         "<div class='col-lg-12' style='margin-top: 12px;'>\n" +
         "    <div class='input-group'>\n" +
         "        <span class='input-group-addon' style='text-shadow: none'><span class='glyphicon glyphicon-link' aria-hidden='true'></span></span>\n" +
