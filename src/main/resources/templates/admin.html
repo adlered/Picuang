@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <html lang="en">
 <html>
 <head>
@@ -39,6 +39,13 @@
                     <div id="message"></div>
                     <div id="config" style="display: none">
                         <div class="row" id="config-row">
+                            <div class="col-md-12" style="margin-top: 32px">
+                                <h4>Q：如何修改我的上传大小限制？</h4>
+                                <p>A：请编辑文件 "<span th:text="${appConfLocation}"></span>"<br>
+                                修改 "spring.servlet.multipart.max-file-size" 和 "spring.servlet.multipart.max-request-size" 选项<br>
+                                假如限制大小为10MB，则将两个键的值全部改为"10MB"，重启服务器后就会生效。<br>
+                                如果重启服务器后不生效或仍有问题，请参阅<a href="https://github.com/AdlerED/Picuang#rotating_light-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" target="_blank"><b>这里</b></a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,12 +115,12 @@
 
                 function showConfig() {
                     axios.get('/api/admin/getConf?conf=imageUploadedCount')
-                        .then(function (response) { 
-                            $("#config-row").append("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>累计存储图片数量</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
+                        .then(function (response) {
+                            $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>累计存储图片数</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
                         });
                     axios.get('/api/admin/getConf?conf=password')
                         .then(function (response) {
-                            $("#config-row").append("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>修改管理员密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
+                            $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>修改管理员密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-default' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
                         });
                     $("#logout").fadeIn(200);
                     $("#config").fadeIn(100);

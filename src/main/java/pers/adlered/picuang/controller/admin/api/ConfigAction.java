@@ -1,13 +1,17 @@
 package pers.adlered.picuang.controller.admin.api;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 
 import javax.servlet.http.HttpSession;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.util.Properties;
 
 /**
  * <h3>picuang</h3>
