@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +242,7 @@
       <workItem from="1573002873605" duration="25013000" />
       <workItem from="1573041669754" duration="5803000" />
       <workItem from="1573047594393" duration="3482000" />
-      <workItem from="1573091947508" duration="1849000" />
+      <workItem from="1573091947508" duration="2097000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -351,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573092719783</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="增加Notification浏览器通知功能">
+      <created>1573094009477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573094009478</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +387,7 @@
     <MESSAGE value=":star: Update README" />
     <MESSAGE value=":star: V2.0版本正式发布！" />
     <MESSAGE value="修改报错信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改报错信息" />
+    <MESSAGE value="增加Notification浏览器通知功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加Notification浏览器通知功能" />
   </component>
 </project>

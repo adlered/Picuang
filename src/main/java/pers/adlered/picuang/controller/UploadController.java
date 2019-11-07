@@ -102,12 +102,8 @@ public class UploadController {
                 File dest = null;
                 if (ToolBox.isPic(suffixName)) {
                     dest = ToolBox.generatePicFile(suffixName, time, addr);
-                } else if (suffixName.contains(".jpg") || suffixName.contains(".jpeg") || suffixName.contains(".png") || suffixName.contains(".svg") || suffixName.contains(".gif")) {
-                    dest = ToolBox.generatePicFile(".jpg", time, addr);
                 } else {
-                    result.setCode(500);
-                    result.setMsg("不是jpg/jpeg/png/svg/gif图片！");
-                    return result;
+                    dest = ToolBox.generatePicFile(".jpg", time, addr);
                 }
                 System.out.println("Saving into " + dest.getAbsolutePath());
                 if (!dest.getParentFile().exists()) {
