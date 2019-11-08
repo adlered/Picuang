@@ -1,5 +1,22 @@
 $(function () {
     window.Notification.requestPermission(function (status) {});
+
+    axios.get('/api/admin/getConf?conf=adminOnly')
+        .then(function (response) {
+            if (response.data === "on") {
+                axios.get('/api/admin/check')
+                    .then(function (response) {
+                            if (response.data.code === 200) {
+                                $("#functions").show();
+                            } else {
+                                $("#functions").after("<code>抱歉！根据管理员的设置，非管理员用户无法上传图片。</code>");
+                            }
+                        }
+                    );
+            } else if (response.data === "off") {
+                $("#functions").show();
+            }
+        });
 });
 
 function sendNotify(str) {

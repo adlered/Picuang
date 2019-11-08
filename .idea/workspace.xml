@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,6 +260,7 @@
       <workItem from="1573128423523" duration="3898000" />
       <workItem from="1573134211645" duration="6416000" />
       <workItem from="1573176313986" duration="8374000" />
+      <workItem from="1573190743704" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -564,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573188782754</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="修改版本号">
+      <created>1573189373989</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1573189373989</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +623,6 @@
     <MESSAGE value="去掉“其它图片不受影响”" />
     <MESSAGE value="站内提醒favicon" />
     <MESSAGE value="自V2.2版本开始，Picuang使用Apache License" />
-    <MESSAGE value="修改版本号" />
     <MESSAGE value="上传后点击图片可以在新标签页打开原图" />
     <MESSAGE value="回车执行" />
     <MESSAGE value="后台管理、修改累计上传图片数量、修改管理员密码" />
@@ -627,6 +639,7 @@
     <MESSAGE value="config.ini数据安全性" />
     <MESSAGE value="Prop启动时自动生成" />
     <MESSAGE value="Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README" />
+    <MESSAGE value="修改版本号" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改版本号" />
   </component>
 </project>

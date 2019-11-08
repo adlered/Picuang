@@ -41,7 +41,7 @@ public class ConfigAction {
     @RequestMapping("/api/admin/getConf")
     @ResponseBody
     public String getConf(HttpSession session, String conf) {
-        if (logged(session)) {
+        if (logged(session) || conf.equals("adminOnly")) {
             String result = Prop.get(conf);
             if (result != null) {
                 return result;

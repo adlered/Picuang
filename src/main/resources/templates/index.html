@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>🛏Picuang - 永久免费 | 免登录图床</title>
-    <link rel="icon" href="/favicon.png">
+    <link href="/favicon.png" rel="icon">
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap/cover.css" rel="stylesheet">
@@ -48,31 +48,34 @@
                     服务器剩余空间：<span th:text="${free}"></span>GB
                 </p>
 
-                <p class="lead">
-                    <a class="btn btn-lg btn-default" href="javascript:void(0)" id="select">选择图片</a>
-                    <input accept="image/jpg,image/jpeg,image/png,image/gif,image/svg,image/svg+xml,application/x-bmp,image/x-icon,application/x-ico,image/tiff" id="upload"
-                           multiple
-                           name="file"
-                           onchange="upload()" style="display: none" type="file">
-                </p>
+                <span id="functions" style="display: none">
+                    <p class="lead">
+                        <a class="btn btn-lg btn-default" href="javascript:void(0)" id="select">选择图片</a>
+                        <input accept="image/jpg,image/jpeg,image/png,image/gif,image/svg,image/svg+xml,application/x-bmp,image/x-icon,application/x-ico,image/tiff"
+                               id="upload"
+                               multiple
+                               name="file"
+                               onchange="upload()" style="display: none" type="file">
+                    </p>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="input-group">
-                            <input id="picURL" type="text" class="form-control" placeholder="输入图片URL链接，一键转存至Picuang图床">
-                            <span class="input-group-btn">
-                                 <button onclick="clone()" class="btn btn-default" type="button">Clone!</button>
-                            </span>
-                            <script>
-                                $("#picURL").keyup(function (event) {
-                                    if (event.keyCode === 13) {
-                                        clone();
-                                    }
-                                });
-                            </script>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <input class="form-control" id="picURL" placeholder="输入图片URL链接，一键转存至Picuang图床" type="text">
+                                <span class="input-group-btn">
+                                     <button class="btn btn-default" onclick="clone()" type="button">Clone!</button>
+                                </span>
+                                <script>
+                                    $("#picURL").keyup(function (event) {
+                                        if (event.keyCode === 13) {
+                                            clone();
+                                        }
+                                    });
+                                </script>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </span>
 
                 <br>
 
@@ -103,9 +106,10 @@
             <div class="mastfoot">
                 <div class="inner">
                     <p>
-                        <a href="https://github.com/AdlerED/Picuang" target="_blank">Picuang <span th:text="${version}"></span></a>
+                        <a href="https://github.com/AdlerED/Picuang" target="_blank">Picuang <span
+                                th:text="${version}"></span></a>
                         <br>
-                        <script type="text/javascript" src="https://js.users.51.la/20181641.js"></script>
+                        <script src="https://js.users.51.la/20181641.js" type="text/javascript"></script>
                         <br>
                         <a href="http://beian.miit.gov.cn" style="text-decoration: none;"
                            target="_blank">京ICP备18063791号</a>
