@@ -74,7 +74,11 @@ function uploadConfigToServer(file) {
     };
     axios.post('/api/admin/import', param, config)
         .then(function (response) {
-                alert(response.data.code);
+                if (response.data.code === 200) {
+                    sendInnerNotify("配置导入成功！重启服务端后生效。");
+                } else {
+                    sendInnerNotify("配置导入失败！请检查你的配置文件后缀名是否是.ini，且确认其可用性。")
+                }
             }
         );
 }
