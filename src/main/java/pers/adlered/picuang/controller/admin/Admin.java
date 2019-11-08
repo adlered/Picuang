@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pers.adlered.picuang.prop.Prop;
+import pers.adlered.picuang.tool.ToolBox;
 
 /**
  * <h3>picuang</h3>
@@ -22,6 +23,22 @@ public class Admin {
     public ModelAndView admin() {
         ModelAndView modelAndView = new ModelAndView("admin");
         modelAndView.addObject("appConfLocation", ClassUtils.getDefaultClassLoader().getResource("").getPath() + "application.properties");
+        modelAndView.addObject("version", Prop.get("version"));
+        modelAndView.addObject("checkVersion", checkVersion());
         return modelAndView;
+    }
+
+    private String checkVersion() {
+        String neededVersion = Prop.getVersion();
+        String realVersion = Prop.get("version");
+        if (neededVersion.equals(realVersion)) {
+            return "";
+        } else {
+            return "<code style='text-shadow: none !important;'>您的Picuang配置文件来自旧版 (" + realVersion + ") . " +
+                    "请将旧配置文件 (" + ToolBox.getINIDir() + ") 备份并删除, 重启Picuang服务端使Picuang重新生成一个新版的配置文件. " +
+                    "再对照自动生成的新版本 (" + neededVersion + ") 配置文件, 将您备份的旧版配置文件中的数据替换 (除了version以外) . " +
+                    "<br>如果您不想更新配置文件, 但想去除本通知, 请将 config.ini 中的 version 值修改为: \"" + neededVersion + "\" , 然后重启服务端. </code>" +
+                    "<hr color='#6f5499' size='3' style='filter: alpha(opacity=100,finishopacity=0,style=3); margin-top: 36px; margin-bottom: 36px;' width='95%'/>";
+        }
     }
 }

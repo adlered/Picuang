@@ -41,6 +41,7 @@
 
             <div class="inner cover">
                 <div id="admin" style="margin-top: 36px; margin-bottom: 36px;">
+                    <div id="checkVersion" th:utext="${checkVersion}"></div>
                     <div id="message" style="display: none"></div>
                     <div id="config" style="display: none">
                         <div class="row" id="config-row">
@@ -101,6 +102,9 @@
             <div class="mastfoot">
                 <div class="inner">
                     <p>
+                        <a href="https://github.com/AdlerED/Picuang" target="_blank">Picuang <span
+                                th:text="${version}"></span></a>
+                        <br>
                         <script src="https://js.users.51.la/20181641.js" type="text/javascript"></script>
                         <br>
                         <a href="http://beian.miit.gov.cn" style="text-decoration: none;"

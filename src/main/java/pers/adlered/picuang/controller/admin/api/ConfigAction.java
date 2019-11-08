@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import pers.adlered.picuang.log.Logger;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.FileUtil;
@@ -87,7 +88,7 @@ public class ConfigAction {
                 config.renameTo(new File("config.ini.backup"));
                 File newConfig = new File(config.getAbsolutePath());
                 file.transferTo(newConfig);
-                System.out.println(newConfig.getPath());
+                Logger.log(newConfig.getPath());
                 result.setCode(200);
             } else {
                 result.setCode(500);

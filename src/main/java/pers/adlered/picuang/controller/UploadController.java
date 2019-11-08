@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import pers.adlered.picuang.access.HttpOrHttpsAccess;
+import pers.adlered.picuang.log.Logger;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.IPUtil;
@@ -35,14 +36,14 @@ public class UploadController {
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();
             if (Prop.get("adminOnly").equals("on")) {
-                System.out.println("AdminOnly mode is on! Checking user's permission...");
+                Logger.log("AdminOnly mode is on! Checking user's permission...");
                 if (!logged(session)) {
-                    System.out.println("User not logged! Uploading terminated.");
+                    Logger.log("User not logged! Uploading terminated.");
                     result.setCode(401);
                     result.setMsg("管理员禁止了普通用户上传文件！");
                     return result;
                 }
-                System.out.println("Admin is uploading...");
+                Logger.log("Admin is uploading...");
             }
             try {
                 while (!allowed) {
@@ -59,13 +60,13 @@ public class UploadController {
             //是否是图片格式
             String filename = file.getOriginalFilename();
             String suffixName = ToolBox.getSuffixName(filename);
-            System.out.println("SuffixName: " + suffixName);
+            Logger.log("SuffixName: " + suffixName);
             if (ToolBox.isPic(suffixName)) {
                 String time = ToolBox.getDirByTime();
                 File dest = ToolBox.generatePicFile(suffixName, time, addr);
                 result.setData(filename);
                 filename = dest.getName();
-                System.out.println("Saving into " + dest.getAbsolutePath());
+                Logger.log("Saving into " + dest.getAbsolutePath());
                 if (!dest.getParentFile().exists()) {
                     dest.getParentFile().mkdirs();
                 }
@@ -107,18 +108,18 @@ public class UploadController {
             } catch (InterruptedException IE) {}
             Result result = new Result();
             if (Prop.get("adminOnly").equals("on")) {
-                System.out.println("AdminOnly mode is on! Checking user's permission...");
+                Logger.log("AdminOnly mode is on! Checking user's permission...");
                 if (!logged(session)) {
-                    System.out.println("User not logged! Uploading terminated.");
+                    Logger.log("User not logged! Uploading terminated.");
                     result.setCode(401);
                     result.setMsg("管理员禁止了普通用户上传文件！");
                     return result;
                 }
-                System.out.println("Admin is uploading...");
+                Logger.log("Admin is uploading...");
             }
             try {
                 String suffixName = ToolBox.getSuffixName(url);
-                System.out.println("SuffixName: " + suffixName);
+                Logger.log("SuffixName: " + suffixName);
                 String time = ToolBox.getDirByTime();
                 File dest = null;
                 if (ToolBox.isPic(suffixName)) {
@@ -126,7 +127,7 @@ public class UploadController {
                 } else {
                     dest = ToolBox.generatePicFile(".png", time, addr);
                 }
-                System.out.println("Saving into " + dest.getAbsolutePath());
+                Logger.log("Saving into " + dest.getAbsolutePath());
                 if (!dest.getParentFile().exists()) {
                     dest.getParentFile().mkdirs();
                 }

@@ -1,6 +1,7 @@
 package pers.adlered.picuang.prop;
 
 import org.springframework.stereotype.Component;
+import pers.adlered.picuang.log.Logger;
 
 import java.io.*;
 import java.util.Properties;
@@ -15,11 +16,14 @@ import java.util.Set;
  **/
 @Component
 public class Prop {
+    // 版本号
+    private static final String version = "V2.3";
+
     private static Properties properties = new Properties();
 
     static {
         put();
-        System.out.println("Properties loaded.");
+        Logger.log("Properties loaded.");
     }
 
     public static void del() {
@@ -31,9 +35,9 @@ public class Prop {
         try {
             properties.load(new BufferedInputStream(new FileInputStream("config.ini")));
         } catch (FileNotFoundException e) {
-            System.out.println("Generating new profile...");
+            Logger.log("Generating new profile...");
             properties.put("imageUploadedCount", "0");
-            properties.put("version", "V2.3");
+            properties.put("version", version);
             properties.put("password", "");
             properties.put("adminOnly", "off");
             try {
@@ -55,7 +59,7 @@ public class Prop {
     public static void set(String key, String value) {
         try {
             properties.setProperty(key, value);
-            System.out.println("[Prop] Set key '" + key + "' to value '" + value + "'");
+            Logger.log("[Prop] Set key '" + key + "' to value '" + value + "'");
             PrintWriter printWriter = new PrintWriter(new FileWriter("config.ini"), true);
             Set set = properties.keySet();
             for (Object object : set) {
@@ -66,5 +70,9 @@ public class Prop {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getVersion() {
+        return version;
     }
 }

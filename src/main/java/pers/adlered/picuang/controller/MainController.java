@@ -36,6 +36,7 @@ public class MainController {
     @ResponseBody
     public ModelAndView history() {
         ModelAndView modelAndView = new ModelAndView("history");
+        modelAndView.addObject("version", Prop.get("version"));
         return modelAndView;
     }
 }
