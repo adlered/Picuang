@@ -1,5 +1,7 @@
 package pers.adlered.picuang.prop;
 
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.util.Properties;
 import java.util.Set;
@@ -11,11 +13,13 @@ import java.util.Set;
  * @author : https://github.com/AdlerED
  * @date : 2019-11-06 21:29
  **/
+@Component
 public class Prop {
     private static Properties properties = new Properties();
 
-    public static void init() {
+    static {
         put();
+        System.out.println("Properties loaded.");
     }
 
     public static void del() {
@@ -27,6 +31,7 @@ public class Prop {
         try {
             properties.load(new BufferedInputStream(new FileInputStream("config.ini")));
         } catch (FileNotFoundException e) {
+            System.out.println("Generating new profile...");
             properties.put("imageUploadedCount", "0");
             properties.put("version", "V2.2");
             properties.put("password", "");
