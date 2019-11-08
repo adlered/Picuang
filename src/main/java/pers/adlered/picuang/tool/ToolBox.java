@@ -40,4 +40,8 @@ public class ToolBox {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd/HH/mm/");
         return simpleDateFormat.format(date);
     }
+
+    public static String getINIDir() {
+        return new File("config.ini").getAbsolutePath();
+    }
 }

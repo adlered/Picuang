@@ -30,6 +30,7 @@ public class Prop {
             properties.put("imageUploadedCount", "0");
             properties.put("version", "V2.2");
             properties.put("password", "");
+            properties.put("adminOnly", "off");
             try {
                 properties.store(new BufferedOutputStream(new FileOutputStream("config.ini")), "Save Configs File.");
             } catch (FileNotFoundException FNFE) {

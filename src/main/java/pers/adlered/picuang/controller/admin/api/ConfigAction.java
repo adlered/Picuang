@@ -1,8 +1,6 @@
 package pers.adlered.picuang.controller.admin.api;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,13 +8,11 @@ import org.springframework.web.multipart.MultipartFile;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.FileUtil;
+import pers.adlered.picuang.tool.ToolBox;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.util.Properties;
 
 /**
  * <h3>picuang</h3>
@@ -29,6 +25,7 @@ import java.util.Properties;
 public class ConfigAction {
     /**
      * 检查管理员是否已登录
+     *
      * @param session
      * @return
      */
@@ -45,7 +42,12 @@ public class ConfigAction {
     @ResponseBody
     public String getConf(HttpSession session, String conf) {
         if (logged(session)) {
-            return Prop.get(conf);
+            String result = Prop.get(conf);
+            if (result != null) {
+                return result;
+            } else {
+                return "找不到配置！如果你更新过Picuang，请备份并删除当前的config.ini文件（位于 " + ToolBox.getINIDir() + " ），然后重启服务端，使Picuang重新生成新的配置文件。";
+            }
         } else {
             return "Permission denied";
         }

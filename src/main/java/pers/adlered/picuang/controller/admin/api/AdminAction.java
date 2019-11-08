@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
+import pers.adlered.picuang.tool.ToolBox;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -32,7 +33,7 @@ public class AdminAction {
         try {
             if (Prop.get("password").isEmpty()) {
                 result.setCode(500);
-                result.setData(new File("config.ini").getAbsolutePath());
+                result.setData(ToolBox.getINIDir());
             } else {
                 result.setCode(200);
             }
