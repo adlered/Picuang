@@ -24,15 +24,9 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 
 - [x] 历史记录功能（按IP地址读取，所以更换IP地址后无法查询）
 
-- [ ] Picuang管理员后台设置界面（基于配置文件存储，不依赖数据库）
+- [x] Picuang管理员后台设置界面（基于配置文件存储，不依赖数据库）
 
-### 暂未确定是否加入的功能
-
-- [ ] 用户登录功能（暂时不考虑加入，Picuang是以轻量为前提的图床程序，用户登录需要依赖数据库）
-
-- [ ] 图片压缩功能（暂时不考虑加入，图片压缩会增加服务器负载，且压缩后的图片会~~失去灵魂~~）
-
-此处功能短期内不会开发，但Picuang架构非常简单，实现新功能也很简单，如有能力可以自行编写，也欢迎提交PR :)
+- [x] 仅管理员可上传功能（默认关闭，必须在后台登录后才能上传）
 
 # :globe_with_meridians: 使用技术
 
@@ -48,13 +42,13 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 `Bootstrap`
 `Axios`
 
-# :mag: 预览
+# :mag: 体验 && 体验GIF
 
 [可以来这里直接体验哦~](https://pic.stackoverflow.wiki/)
 
-GIF加载较慢，你也可以访问[这里](https://pic.stackoverflow.wiki/uploadImages/125/33/189/136/2019/11/06/22/29/484ca851-88cb-4554-9444-272f218781bd.gif)查看（该图片也采用了我自搭建的公共Picuang图床存储）
+GIF加载较慢，你也可以访问[这里](https://pic.stackoverflow.wiki/uploadImages/218/246/109/28/2019/11/08/12/52/4e172675-0816-4bda-8752-9ed2110aeb79.gif)查看（该图片也采用了我自搭建的公共Picuang图床存储）
 
-![picuang2.gif](https://pic.stackoverflow.wiki/uploadImages/125/33/189/136/2019/11/06/22/29/484ca851-88cb-4554-9444-272f218781bd.gif)
+![picuangdemo.gif](https://pic.stackoverflow.wiki/uploadImages/218/246/109/28/2019/11/08/12/52/4e172675-0816-4bda-8752-9ed2110aeb79.gif)
 
 # :page_facing_up: 使用方法
 
