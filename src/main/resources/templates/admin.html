@@ -63,7 +63,7 @@
                             size="3" style="filter: alpha(opacity=100,finishopacity=0,style=3); margin-top: 36px; margin-bottom: 36px;" width="95%"/>
                         <div class="help">
                             <h4>Q：如何修改我的上传大小限制？</h4>
-                            <p>A：请编辑文件 "<span th:text="${appConfLocation}"></span>"<br>
+                            <p>A：编辑文件 "<span th:text="${appConfLocation}"></span>"<br>
                                 修改 "spring.servlet.multipart.max-file-size" 和
                                 "spring.servlet.multipart.max-request-size" 选项<br>
                                 假如限制大小为10MB，则将两个键的值全部改为"10MB"，重启服务器后就会生效。<br>
