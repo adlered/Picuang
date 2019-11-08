@@ -48,7 +48,7 @@
                                     <button class="btn btn-default" onclick="exportConfig()" type="button">导出配置</button>
                                 </div>
                                 <div class="btn-group" role="group">
-                                    <button class="btn btn-primary" type="button">仅允许管理员上传 (当前：否)</button>
+                                    <button class="btn btn-primary" onclick="adminOnlyToggle()" type="button">仅允许管理员上传 (当前: <span id="adminOnlyStatus"></span>)</button>
                                 </div>
                                 <div class="btn-group" role="group">
                                     <button class="btn btn-default" id="importButton" type="button">导入配置</button>
