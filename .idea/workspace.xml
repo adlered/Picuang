@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
-    </list>
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +252,7 @@
       <workItem from="1573117420352" duration="3357000" />
       <workItem from="1573128423523" duration="3898000" />
       <workItem from="1573134211645" duration="6416000" />
-      <workItem from="1573176313986" duration="8089000" />
+      <workItem from="1573176313986" duration="8374000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -543,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573184295643</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Prop启动时自动生成">
+      <created>1573184639108</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1573184639108</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +571,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Clone功能规则放宽" />
     <MESSAGE value="删除config.ini，增加gitignore" />
     <MESSAGE value="增加Inner Notification" />
     <MESSAGE value="增加BMP/ICO/TIFF Content-Type" />
@@ -591,6 +595,7 @@
     <MESSAGE value="仅管理员上传功能完成" />
     <MESSAGE value="配置导入提示" />
     <MESSAGE value="config.ini数据安全性" />
-    <option name="LAST_COMMIT_MESSAGE" value="config.ini数据安全性" />
+    <MESSAGE value="Prop启动时自动生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prop启动时自动生成" />
   </component>
 </project>
