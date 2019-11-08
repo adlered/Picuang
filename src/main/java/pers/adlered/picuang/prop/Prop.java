@@ -15,6 +15,15 @@ public class Prop {
     private static Properties properties = new Properties();
 
     static {
+        put();
+    }
+
+    public static void del() {
+        File file = new File("config.ini");
+        file.delete();
+    }
+
+    public static void put() {
         try {
             properties.load(new BufferedInputStream(new FileInputStream("config.ini")));
         } catch (FileNotFoundException e) {

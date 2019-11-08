@@ -29,11 +29,16 @@ public class AdminAction {
     @ResponseBody
     public Result init() {
         Result result = new Result();
-        if (Prop.get("password").isEmpty()) {
-            result.setCode(500);
-            result.setData(new File("config.ini").getAbsolutePath());
-        } else {
-            result.setCode(200);
+        try {
+            if (Prop.get("password").isEmpty()) {
+                result.setCode(500);
+                result.setData(new File("config.ini").getAbsolutePath());
+            } else {
+                result.setCode(200);
+            }
+        } catch (NullPointerException NPE) {
+            Prop.del();
+            Prop.put();
         }
         return result;
     }
