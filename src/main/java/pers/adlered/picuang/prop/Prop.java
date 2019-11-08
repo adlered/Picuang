@@ -33,7 +33,7 @@ public class Prop {
         } catch (FileNotFoundException e) {
             System.out.println("Generating new profile...");
             properties.put("imageUploadedCount", "0");
-            properties.put("version", "V2.2");
+            properties.put("version", "V2.3");
             properties.put("password", "");
             properties.put("adminOnly", "off");
             try {
