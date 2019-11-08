@@ -9,7 +9,6 @@ import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.ToolBox;
 
 import javax.servlet.http.HttpSession;
-import java.io.File;
 
 /**
  * <h3>picuang</h3>
@@ -38,8 +37,8 @@ public class AdminAction {
                 result.setCode(200);
             }
         } catch (NullPointerException NPE) {
-            Prop.del();
-            Prop.put();
+            result.setCode(500);
+            result.setData(ToolBox.getINIDir());
         }
         return result;
     }

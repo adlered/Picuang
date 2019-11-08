@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/AdminAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/AdminAction.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +254,7 @@
       <workItem from="1573117420352" duration="3357000" />
       <workItem from="1573128423523" duration="3898000" />
       <workItem from="1573134211645" duration="6416000" />
-      <workItem from="1573176313986" duration="7546000" />
+      <workItem from="1573176313986" duration="7830000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -527,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573183800939</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="配置导入提示">
+      <created>1573184101171</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1573184101171</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +559,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修改报错信息" />
     <MESSAGE value="增加Notification浏览器通知功能" />
     <MESSAGE value="Clone功能规则放宽" />
     <MESSAGE value="删除config.ini，增加gitignore" />
@@ -575,6 +583,7 @@
     <MESSAGE value="修复历史记录时间线划分问题" />
     <MESSAGE value="仅管理员上传按钮" />
     <MESSAGE value="仅管理员上传功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="仅管理员上传功能完成" />
+    <MESSAGE value="配置导入提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置导入提示" />
   </component>
 </project>

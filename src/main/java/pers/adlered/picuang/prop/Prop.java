@@ -14,7 +14,7 @@ import java.util.Set;
 public class Prop {
     private static Properties properties = new Properties();
 
-    static {
+    public static void init() {
         put();
     }
 
