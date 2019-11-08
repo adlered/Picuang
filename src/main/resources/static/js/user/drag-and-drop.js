@@ -1,4 +1,22 @@
 $(function () {
+    axios.get('/api/admin/getConf?conf=adminOnly')
+        .then(function (response) {
+                if (response.data === "on") {
+                    axios.get('/api/admin/check')
+                        .then(function (response) {
+                                if (response.data.code === 200) {
+                                    bind();
+                                }
+                            }
+                        );
+                } else if (response.data === "off") {
+                    bind();
+                }
+            }
+        );
+});
+
+function bind() {
     var oDiv = $("html").get(0);
     oDiv.ondragenter = function () {
         $("#dragToUploadInformation").show(1000);
@@ -26,7 +44,7 @@ $(function () {
             }
         }
     }
-});
+}
 
 function dataURLtoFile(dataURL, fileName) {
     var arr = dataURL.split(','),
