@@ -76,8 +76,12 @@ function uploadToServer(file) {
                 sendStatus('<button onclick="stopUploadThreads()" class="btn btn-info">终止上传</button><br><br>多线程传输中<br><strong>队列：' + queue + '</strong><br>' + file.name + '：' + progress + '%');
                 --queue;
                 if (queue == 0) {
-                    sendNotify(tempCount + "张图片已上传成功。");
-                    sendStatus("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
+                    if (response.data.code == 401) {
+                        sendStatus("<strong>上传失败！</strong>" + response.data.msg);
+                    } else {
+                        sendNotify(tempCount + "张图片已上传成功。");
+                        sendStatus("<strong>" + tempCount + "张</strong> 图片已全部传输完毕。");
+                    }
                     tempCount = 0;
                 }
                 sourceAll = undefined;

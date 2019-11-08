@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/common-queue.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +258,7 @@
       <workItem from="1573117420352" duration="3357000" />
       <workItem from="1573128423523" duration="3898000" />
       <workItem from="1573134211645" duration="6416000" />
-      <workItem from="1573176313986" duration="5702000" />
+      <workItem from="1573176313986" duration="7297000" />
     </task>
     <task id="LOCAL-00001" summary=":star: 增加粘贴图片上传功能、修复输出文件夹不存在报错的问题">
       <created>1572966684055</created>
@@ -517,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573181369038</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="仅管理员上传按钮">
+      <created>1573182262961</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1573182262961</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +549,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value=":star: Update README" />
     <MESSAGE value=":star: V2.0版本正式发布！" />
     <MESSAGE value="修改报错信息" />
     <MESSAGE value="增加Notification浏览器通知功能" />
@@ -565,6 +573,7 @@
     <MESSAGE value="更新gitignore" />
     <MESSAGE value="getConf修复空指针问题" />
     <MESSAGE value="修复历史记录时间线划分问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复历史记录时间线划分问题" />
+    <MESSAGE value="仅管理员上传按钮" />
+    <option name="LAST_COMMIT_MESSAGE" value="仅管理员上传按钮" />
   </component>
 </project>

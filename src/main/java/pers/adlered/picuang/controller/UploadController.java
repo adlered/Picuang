@@ -13,6 +13,7 @@ import pers.adlered.picuang.tool.ToolBox;
 import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,12 +28,22 @@ public class UploadController {
 
     @RequestMapping("/upload")
     @ResponseBody
-    public Result upload(@PathVariable MultipartFile file, HttpServletRequest request) {
+    public Result upload(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
             uploadLimiter.setExpireTimeMilli(500);
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();
+            if (Prop.get("adminOnly").equals("on")) {
+                System.out.println("AdminOnly mode is on! Checking user's permission...");
+                if (!logged(session)) {
+                    System.out.println("User not logged! Uploading terminated.");
+                    result.setCode(401);
+                    result.setMsg("管理员禁止了普通用户上传文件！");
+                    return result;
+                }
+                System.out.println("Admin is uploading...");
+            }
             try {
                 while (!allowed) {
                     allowed = uploadLimiter.access(addr);
@@ -83,7 +94,7 @@ public class UploadController {
 
     @RequestMapping("/clone")
     @ResponseBody
-    public Result clone(String url, HttpServletRequest request) {
+    public Result clone(String url, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = cloneLimiter.access(addr);
@@ -95,6 +106,16 @@ public class UploadController {
                 }
             } catch (InterruptedException IE) {}
             Result result = new Result();
+            if (Prop.get("adminOnly").equals("on")) {
+                System.out.println("AdminOnly mode is on! Checking user's permission...");
+                if (!logged(session)) {
+                    System.out.println("User not logged! Uploading terminated.");
+                    result.setCode(401);
+                    result.setMsg("管理员禁止了普通用户上传文件！");
+                    return result;
+                }
+                System.out.println("Admin is uploading...");
+            }
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 System.out.println("SuffixName: " + suffixName);
@@ -137,5 +158,20 @@ public class UploadController {
                 return result;
             }
         }
+    }
+
+    /**
+     * 检查管理员是否已登录
+     *
+     * @param session
+     * @return
+     */
+    public boolean logged(HttpSession session) {
+        boolean logged = false;
+        try {
+            logged = Boolean.parseBoolean(session.getAttribute("admin").toString());
+        } catch (NullPointerException NPE) {
+        }
+        return logged;
     }
 }

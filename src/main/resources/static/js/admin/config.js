@@ -1,27 +1,29 @@
 var adminOnly;
 
 function showConfig() {
-    axios.get('/api/admin/getConf?conf=imageUploadedCount')
-        .then(function (response) {
-            $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>累计存储图片数</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-primary' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
-        });
-    axios.get('/api/admin/getConf?conf=password')
-        .then(function (response) {
-            $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>修改管理员密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-primary' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
-        });
-    axios.get('/api/admin/getConf?conf=adminOnly')
-        .then(function (response) {
-            if (response.data === "on") {
-                adminOnly = "启用";
-            } else if (response.data === "off") {
-                adminOnly = "停用";
-            } else {
-                adminOnly = "未知";
-            }
-            $("#adminOnlyStatus").html(adminOnly);
-        });
-    $("#logout").fadeIn(200);
-    $("#config").fadeIn(100);
+    setTimeout(function () {
+        axios.get('/api/admin/getConf?conf=imageUploadedCount')
+            .then(function (response) {
+                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>累计存储图片数</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-primary' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
+            });
+        axios.get('/api/admin/getConf?conf=password')
+            .then(function (response) {
+                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'>修改管理员密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button class='btn btn-primary' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
+            });
+        axios.get('/api/admin/getConf?conf=adminOnly')
+            .then(function (response) {
+                if (response.data === "on") {
+                    adminOnly = "启用";
+                } else if (response.data === "off") {
+                    adminOnly = "停用";
+                } else {
+                    adminOnly = "未知";
+                }
+                $("#adminOnlyStatus").html(adminOnly);
+            });
+        $("#logout").show(200);
+        $("#config").show(100);
+    }, 250);
 }
 
 function adminOnlyToggle() {
