@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="历史记录显示条数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -601,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573194491404</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="历史记录显示条数">
+      <created>1574592643320</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1574592643320</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +650,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Class增加BMP/ICO/TIFF Content-Type" />
     <MESSAGE value="Clone默认后缀从jpg修改为png" />
     <MESSAGE value="去掉“其它图片不受影响”" />
     <MESSAGE value="站内提醒favicon" />
@@ -664,6 +674,7 @@
     <MESSAGE value="仅管理员模式提示" />
     <MESSAGE value="拖拽管理员模式适配，增加页面切换、登录框特效，管理后台QA折叠" />
     <MESSAGE value="增加配置文件过期提醒" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加配置文件过期提醒" />
+    <MESSAGE value="历史记录显示条数" />
+    <option name="LAST_COMMIT_MESSAGE" value="历史记录显示条数" />
   </component>
 </project>

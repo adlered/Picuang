@@ -9,7 +9,7 @@ $(function () {
                             if (response.data.code === 200) {
                                 $("#functions").show();
                             } else {
-                                $("#functions").after("<code>抱歉！根据管理员的设置，非管理员用户无法上传图片。</code>");
+                                $("#functions").after("<div class='alert alert-danger' style='text-shadow: none; margin: 0px 0px 0px'>抱歉！根据管理员的设置，非管理员用户无法上传图片。</div>");
                             }
                         }
                     );
