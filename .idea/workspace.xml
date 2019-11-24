@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/api/ConfigAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/user/notify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -268,13 +270,6 @@
       <workItem from="1573900875384" duration="4361000" />
       <workItem from="1573922335495" duration="43000" />
       <workItem from="1574591188401" duration="1110000" />
-    </task>
-    <task id="LOCAL-00005" summary=":star: 日常更新">
-      <created>1572968733959</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1572968733959</updated>
     </task>
     <task id="LOCAL-00006" summary=":star: 日常更新">
       <created>1572969053486</created>
@@ -612,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574605107527</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="热重载按钮；重新生成配置文件按钮">
+      <created>1574605441113</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1574605441113</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +652,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="上传后点击图片可以在新标签页打开原图" />
     <MESSAGE value="回车执行" />
     <MESSAGE value="后台管理、修改累计上传图片数量、修改管理员密码" />
     <MESSAGE value="QA" />
@@ -675,7 +676,8 @@
     <MESSAGE value="上传按钮位置下调" />
     <MESSAGE value="帮助按钮" />
     <MESSAGE value="热重载功能上线！；频率限制可自定义！" />
-    <option name="LAST_COMMIT_MESSAGE" value="热重载功能上线！；频率限制可自定义！" />
+    <MESSAGE value="热重载按钮；重新生成配置文件按钮" />
+    <option name="LAST_COMMIT_MESSAGE" value="热重载按钮；重新生成配置文件按钮" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

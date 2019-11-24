@@ -32,6 +32,7 @@ function sendNotify(str) {
             notify.close();
         };
     }
+    sendInnerNotify(str);
 }
 
 function sendInnerNotify(str) {

@@ -111,4 +111,9 @@ public class Prop {
             }
         } catch (Exception e) {}
     }
+
+    public static void renew() {
+        del();
+        put();
+    }
 }

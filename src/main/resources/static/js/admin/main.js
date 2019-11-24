@@ -2,7 +2,8 @@ $(function () {
     axios.get('/api/admin/init')
         .then(function (response) {
                 if (response.data.code === 500) {
-                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 '" + response.data.data + "'<br>中 'password' 的值，然后点击\"重载\"按钮后刷新再试。");
+                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 '" + response.data.data + "'<br>中 'password' 的值，然后点击\"重载\"按钮或重启服务端后刷新再试。<br>" +
+                        "<button class=\"btn btn-success\" onclick=\"reloadServer()\" type=\"button\" style='margin-top: 16px'>重载</button>");
                     $("#message").fadeIn(1000);
                 } else {
                     axios.get('/api/admin/check')

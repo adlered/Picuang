@@ -85,7 +85,7 @@ function adminOnlyToggle() {
             .then(function (response) {
                     adminOnly = "停用";
                     $("#adminOnlyStatus").html(adminOnly);
-                    sendInnerNotify("已停用：仅管理员上传模式。");
+                    sendNotify("已停用：仅管理员上传模式。");
                 }
             );
     } else if (adminOnly === "停用") {
@@ -93,11 +93,11 @@ function adminOnlyToggle() {
             .then(function (response) {
                     adminOnly = "启用";
                     $("#adminOnlyStatus").html(adminOnly);
-                    sendInnerNotify("已启用：仅管理员上传模式。");
+                    sendNotify("已启用：仅管理员上传模式。");
                 }
             );
     } else {
-        sendInnerNotify("无法读取管理员上传模式。请检查配置文件是否有adminOnly项，且值为on或off，修改后点击下方\"重载\"按钮后重试。");
+        sendNotify("无法读取管理员上传模式。请检查配置文件是否有adminOnly项，且值为on或off，修改后点击下方\"重载\"按钮后重试。");
     }
 }
 
@@ -128,10 +128,33 @@ function uploadConfigToServer(file) {
     axios.post('/api/admin/import', param, config)
         .then(function (response) {
                 if (response.data.code === 200) {
-                    sendInnerNotify("配置导入成功！配置现已重载并生效。");
+                    sendNotify("配置导入成功！配置现已重载并生效。请刷新页面！");
                 } else {
-                    sendInnerNotify("配置导入失败！请检查你的配置文件后缀名是否是.ini，且确认其可用性。")
+                    sendNotify("配置导入失败！请检查你的配置文件后缀名是否是.ini，且确认其可用性。")
                 }
             }
         );
+}
+
+function reloadServer() {
+    axios.get('/api/admin/reload')
+        .then(function (response) {
+                sendNotify("配置已重载！请刷新页面。");
+            }
+        );
+}
+
+verifyReNew = 0;
+function reNewConfig() {
+    if (verifyReNew === 0) {
+        tip("您确定要生成新的配置文件吗？在生成新的配置文件之前，你应该将旧的配置文件导出并备份！<br>关闭本窗口后，再点一次\"重新生成配置文件\"按钮确定生成。");
+        verifyReNew = 1;
+    } else {
+        axios.get('/api/admin/renew')
+            .then(function (response) {
+                    sendNotify("已重新生成配置文件！请刷新页面。");
+                }
+            );
+        verifyReNew = 0;
+    }
 }

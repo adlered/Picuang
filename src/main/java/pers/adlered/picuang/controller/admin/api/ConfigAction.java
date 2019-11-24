@@ -100,4 +100,32 @@ public class ConfigAction {
         }
         return result;
     }
+
+    /**
+     * 重载功能
+     * 不验证管理员是否已经登录，因为需要重载初始化后的密码
+     *
+     * @return
+     */
+    @RequestMapping("/api/admin/reload")
+    @ResponseBody
+    public Result reloadConfig() {
+        Result result = new Result();
+        Prop.reload();
+        result.setCode(200);
+        return result;
+    }
+
+    @RequestMapping("/api/admin/renew")
+    @ResponseBody
+    public Result renewConfig(HttpSession session) {
+        Result result = new Result();
+        if (logged(session)) {
+            Prop.renew();
+            result.setCode(200);
+        } else {
+            result.setCode(500);
+        }
+        return result;
+    }
 }
