@@ -40,6 +40,8 @@ public class Prop {
             properties.put("version", version);
             properties.put("password", "");
             properties.put("adminOnly", "off");
+            properties.put("uploadLimit", "1:1");
+            properties.put("cloneLimit", "3:1");
             try {
                 properties.store(new BufferedOutputStream(new FileOutputStream("config.ini")), "Save Configs File.");
             } catch (FileNotFoundException FNFE) {

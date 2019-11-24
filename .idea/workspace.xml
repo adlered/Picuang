@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,13 +266,6 @@
       <workItem from="1573900875384" duration="4361000" />
       <workItem from="1573922335495" duration="43000" />
       <workItem from="1574591188401" duration="1110000" />
-    </task>
-    <task id="LOCAL-00002" summary=":star: 日常更新">
-      <created>1572968092309</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1572968092310</updated>
     </task>
     <task id="LOCAL-00003" summary=":star: 日常更新">
       <created>1572968452004</created>
@@ -608,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574593868226</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="上传按钮位置下调">
+      <created>1574594112256</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1574594112257</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +648,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="去掉“其它图片不受影响”" />
     <MESSAGE value="站内提醒favicon" />
     <MESSAGE value="自V2.2版本开始，Picuang使用Apache License" />
     <MESSAGE value="上传后点击图片可以在新标签页打开原图" />
@@ -671,6 +672,7 @@
     <MESSAGE value="增加配置文件过期提醒" />
     <MESSAGE value="历史记录显示条数" />
     <MESSAGE value="修复未设置密码提示不显示的问题；修改警告样式；" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复未设置密码提示不显示的问题；修改警告样式；" />
+    <MESSAGE value="上传按钮位置下调" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传按钮位置下调" />
   </component>
 </project>
