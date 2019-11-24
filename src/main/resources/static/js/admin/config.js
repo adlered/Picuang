@@ -9,19 +9,35 @@ function showConfig() {
         // 一列
         axios.get('/api/admin/getConf?conf=imageUploadedCount')
             .then(function (response) {
-                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-globe\"></span> 存储图片数量</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\"><span class=\"glyphicon glyphicon-question-sign\"></span></button><button class='btn btn-primary' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
+                $("#config-row").prepend("<div class='col-lg-6'>" +
+                    "<div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-globe\"></span>" +
+                    " 存储图片数量</span><input id='imageUploadedCount-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'>" +
+                    "<button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\" onclick='getHelp(\"imageUploadedCount\")'><span class=\"glyphicon glyphicon-question-sign\"></span></button>" +
+                    "<button class='btn btn-primary' type='button' onclick='editConfig(\"imageUploadedCount\")'>修改</button></span></div></div>");
             });
         axios.get('/api/admin/getConf?conf=password')
             .then(function (response) {
-                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-user\"></span> 后台管理密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button type=\"button\" class=\"btn btn-primary disabled\" aria-label=\"Help\"><span class=\"glyphicon glyphicon-question-sign\"></span></button><button class='btn btn-primary' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
+                $("#config-row").prepend("<div class='col-lg-6'>" +
+                    "<div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-user\"></span>" +
+                    " 后台管理密码</span><input id='password-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'>" +
+                    "<button type=\"button\" class=\"btn btn-primary disabled\" aria-label=\"Help\" onclick='getHelp(\"password\")'><span class=\"glyphicon glyphicon-question-sign\"></span></button>" +
+                    "<button class='btn btn-primary' type='button' onclick='editConfig(\"password\")'>修改</button></span></div></div>");
             });
         axios.get('/api/admin/getConf?conf=cloneLimit')
             .then(function (response) {
-                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-cutlery\"></span> 克隆频率限制</span><input id='cloneLimit-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\"><span class=\"glyphicon glyphicon-question-sign\"></span></button><button class='btn btn-primary' type='button' onclick='editConfig(\"cloneLimit\")'>修改</button></span></div></div>");
+                $("#config-row").prepend("<div class='col-lg-6'>" +
+                    "<div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-cutlery\"></span>" +
+                    " 克隆频率限制</span><input id='cloneLimit-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'>" +
+                    "<button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\" onclick='getHelp(\"cloneLimit\")'><span class=\"glyphicon glyphicon-question-sign\"></span></button>" +
+                    "<button class='btn btn-primary' type='button' onclick='editConfig(\"cloneLimit\")'>修改</button></span></div></div>");
             });
         axios.get('/api/admin/getConf?conf=uploadLimit')
             .then(function (response) {
-                $("#config-row").prepend("<div class='col-lg-6'><div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-open\"></span> 上传频率限制</span><input id='uploadLimit-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\"><span class=\"glyphicon glyphicon-question-sign\"></span></button><button class='btn btn-primary' type='button' onclick='editConfig(\"uploadLimit\")'>修改</button></span></div></div>");
+                $("#config-row").prepend("<div class='col-lg-6'>" +
+                    "<div class='input-group'><span class='input-group-addon' style='text-shadow: none !important;'><span class=\"glyphicon glyphicon-open\"></span>" +
+                    " 上传频率限制</span><input id='uploadLimit-input' aria-label='...' class='form-control' type='text' value='" + response.data + "'><span class='input-group-btn'>" +
+                    "<button type=\"button\" class=\"btn btn-primary\" aria-label=\"Help\" onclick='getHelp(\"uploadLimit\")'><span class=\"glyphicon glyphicon-question-sign\"></span></button>" +
+                    "<button class='btn btn-primary' type='button' onclick='editConfig(\"uploadLimit\")'>修改</button></span></div></div>");
             });
         // 二列
         axios.get('/api/admin/getConf?conf=adminOnly')
@@ -38,6 +54,29 @@ function showConfig() {
         $("#logout").show(200);
         $("#config").show(500);
     }, 250);
+}
+
+function getHelp(key) {
+    if (key === "imageUploadedCount") {
+        tip("存储图片数量是在主页展示的\"为用户累计永久存储图\"的数值。<br>" +
+            "修改本值不会影响图片的存储，用户每上传一张图片该数值就会+1。");
+    } else if (key === "uploadLimit") {
+        tip("设置上传的频率限制。<br>" +
+            "冒号左侧代表\"时间\"，右侧代表\"次数\"。<br>" +
+            "例如\"3:1\"代表\"每三秒允许上传一张图片\"。<br>" +
+            "设置过小的数值会致使上传速度变慢。<br>" +
+            "上传多张图片时达到限制会自动阻塞，不会影响正常上传。");
+    } else if (key === "cloneLimit") {
+        tip("设置克隆的频率限制。<br>" +
+            "冒号左侧代表\"时间\"，右侧代表\"次数\"。<br>" +
+            "例如\"3:1\"代表\"每三秒允许克隆一张图片\"。<br>" +
+            "设置过小的数值会致使克隆速度变慢。<br>");
+    }
+}
+
+function tip(text) {
+    $("#helpText").html(text);
+    $('#helpModal').modal();
 }
 
 function adminOnlyToggle() {

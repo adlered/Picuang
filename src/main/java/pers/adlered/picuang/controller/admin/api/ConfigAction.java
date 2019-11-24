@@ -89,6 +89,7 @@ public class ConfigAction {
                 File newConfig = new File(config.getAbsolutePath());
                 file.transferTo(newConfig);
                 Logger.log(newConfig.getPath());
+                Prop.reload();
                 result.setCode(200);
             } else {
                 result.setCode(500);

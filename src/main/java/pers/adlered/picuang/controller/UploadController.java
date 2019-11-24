@@ -24,14 +24,13 @@ import java.util.regex.Pattern;
 
 @Controller
 public class UploadController {
-    SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
-    SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
+    public static SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
+    public static SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
 
     @RequestMapping("/upload")
     @ResponseBody
     public Result upload(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
-            uploadLimiter.setExpireTimeMilli(500);
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();

@@ -1,7 +1,9 @@
 package pers.adlered.picuang.prop;
 
 import org.springframework.stereotype.Component;
+import pers.adlered.picuang.controller.UploadController;
 import pers.adlered.picuang.log.Logger;
+import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
 import java.io.*;
 import java.util.Properties;
@@ -24,6 +26,7 @@ public class Prop {
     static {
         put();
         Logger.log("Properties loaded.");
+        reload();
     }
 
     public static void del() {
@@ -72,9 +75,40 @@ public class Prop {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        if (!key.equals("imageUploadedCount")) {
+            reload();
+        }
     }
 
     public static String getVersion() {
         return version;
+    }
+
+    public static void reload() {
+        Logger.log("Reloading profile...");
+        // Reload properties
+        try {
+            properties.load(new BufferedInputStream(new FileInputStream("config.ini")));
+        } catch (Exception e) {}
+        // Upload limit
+        try {
+            String uploadLimitMaster = get("uploadLimit");
+            if (uploadLimitMaster.contains(":")) {
+                int uploadLimitTime = Integer.parseInt(uploadLimitMaster.split(":")[0]);
+                int uploadLimitTimes = Integer.parseInt(uploadLimitMaster.split(":")[1]);
+                UploadController.uploadLimiter = new SimpleCurrentLimiter(uploadLimitTime, uploadLimitTimes);
+                Logger.log("Upload limit custom setting loaded (" + uploadLimitTimes + " times in " + uploadLimitTime + " second) .");
+            }
+        } catch (Exception e) {}
+        // Clone limit
+        try {
+            String cloneLimitMaster = get("cloneLimit");
+            if (cloneLimitMaster.contains(":")) {
+                int cloneLimitTime = Integer.parseInt(cloneLimitMaster.split(":")[0]);
+                int cloneLimitTimes = Integer.parseInt(cloneLimitMaster.split(":")[1]);
+                UploadController.cloneLimiter = new SimpleCurrentLimiter(cloneLimitTime, cloneLimitTimes);
+                Logger.log("Clone limit custom setting loaded (" + cloneLimitTimes + " times in " + cloneLimitTime + " second) .");
+            }
+        } catch (Exception e) {}
     }
 }
