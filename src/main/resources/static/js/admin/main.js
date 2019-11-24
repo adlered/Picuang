@@ -2,7 +2,7 @@ $(function () {
     axios.get('/api/admin/init')
         .then(function (response) {
                 if (response.data.code === 500) {
-                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 '" + response.data.data + "'<br>中 'password' 的值，然后重启服务端。");
+                    $("#message").html("管理密码未设置，无法进入控制台！<br>请编辑文件 '" + response.data.data + "'<br>中 'password' 的值，然后点击\"重载\"按钮后刷新再试。");
                     $("#message").fadeIn(1000);
                 } else {
                     axios.get('/api/admin/check')

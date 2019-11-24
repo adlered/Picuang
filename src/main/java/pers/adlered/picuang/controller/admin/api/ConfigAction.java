@@ -47,7 +47,7 @@ public class ConfigAction {
             if (result != null) {
                 return result;
             } else {
-                return "找不到配置！如果你更新过Picuang，请备份并删除当前的config.ini文件（位于 " + ToolBox.getINIDir() + " ），然后重启服务端，使Picuang重新生成新的配置文件。";
+                return "找不到配置！如果你更新过Picuang，请备份并删除当前的config.ini文件（位于 " + ToolBox.getINIDir() + " ），然后重启服务端或点击\"生成新配置文件\"按钮，使Picuang重新生成新的配置文件。";
             }
         } else {
             return "Permission denied";

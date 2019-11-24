@@ -97,7 +97,7 @@ function adminOnlyToggle() {
                 }
             );
     } else {
-        sendInnerNotify("无法读取管理员上传模式。请检查配置文件是否有adminOnly项，且值为on或off，修改后重启服务端重试。");
+        sendInnerNotify("无法读取管理员上传模式。请检查配置文件是否有adminOnly项，且值为on或off，修改后点击下方\"重载\"按钮后重试。");
     }
 }
 
@@ -128,7 +128,7 @@ function uploadConfigToServer(file) {
     axios.post('/api/admin/import', param, config)
         .then(function (response) {
                 if (response.data.code === 200) {
-                    sendInnerNotify("配置导入成功！重启服务端后生效。");
+                    sendInnerNotify("配置导入成功！配置现已重载并生效。");
                 } else {
                     sendInnerNotify("配置导入失败！请检查你的配置文件后缀名是否是.ini，且确认其可用性。")
                 }
