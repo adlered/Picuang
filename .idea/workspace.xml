@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: 热重载功能上线，后台配置更简单丰富，不需要再重启服务端">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,13 +264,6 @@
       <workItem from="1573900875384" duration="4361000" />
       <workItem from="1573922335495" duration="43000" />
       <workItem from="1574591188401" duration="1110000" />
-    </task>
-    <task id="LOCAL-00007" summary=":star: 日常更新">
-      <created>1572969274591</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1572969274591</updated>
     </task>
     <task id="LOCAL-00008" summary=":star: 克隆功能完成">
       <created>1573020954414</created>
@@ -608,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574607295796</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary=":star: 热重载功能上线，后台配置更简单丰富，不需要再重启服务端">
+      <created>1574607430285</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1574607430285</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
