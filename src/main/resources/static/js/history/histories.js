@@ -27,8 +27,9 @@ $(function () {
                                                         if (i == 0) {
                                                             $("#histories").prepend("" +
                                                                 "<h5>历史记录根据您的IP地址（" + data.ip + "）所生成，请及时保存，IP地址更改后历史记录将丢失。</h5>");
-                                                            ++i;
                                                         }
+                                                        ++i;
+                                                        $("#picCount").text(i);
                                                     });
                                                 });
                                         });

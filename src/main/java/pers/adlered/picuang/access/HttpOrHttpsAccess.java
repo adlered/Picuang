@@ -1,7 +1,5 @@
 package pers.adlered.picuang.access;
 
-import pers.adlered.picuang.tool.ToolBox;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;

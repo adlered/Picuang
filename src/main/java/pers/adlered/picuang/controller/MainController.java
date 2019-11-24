@@ -28,7 +28,7 @@ public class MainController {
         // 限制文件大小
         modelAndView.addObject("limit", maxFileSize);
         // 版本
-        modelAndView.addObject("version", Prop.get("version"));
+        modelAndView.addObject("version", Prop.getVersion());
         return modelAndView;
     }
 
@@ -36,7 +36,7 @@ public class MainController {
     @ResponseBody
     public ModelAndView history() {
         ModelAndView modelAndView = new ModelAndView("history");
-        modelAndView.addObject("version", Prop.get("version"));
+        modelAndView.addObject("version", Prop.getVersion());
         return modelAndView;
     }
 }
