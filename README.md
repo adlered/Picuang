@@ -8,7 +8,7 @@
 
 # 原理
 
-Picuang是一款`根图床`WEB程序。用户可以向Picuang中上传`jpg`/`jpeg`/`png`/`svg`/`gif`图片，Picuang会自动将图片上传至Picuang的运行目录中。
+Picuang是一款`根图床`WEB程序。用户可以向Picuang中上传`jpg`/`jpeg`/`png`/`svg`/`gif`/`bmp`/`ico`/`tiff`图片，Picuang会自动将图片上传至Picuang的运行目录中。
 
 Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`其它公共容器`中(例如七牛、新浪什么的)，适用于`想搭建一个提供图床存储、读取服务的同学`。
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: 热重载功能上线，后台配置更简单丰富，不需要再重启服务端">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,13 +264,7 @@
       <workItem from="1573900875384" duration="4361000" />
       <workItem from="1573922335495" duration="43000" />
       <workItem from="1574591188401" duration="1110000" />
-    </task>
-    <task id="LOCAL-00008" summary=":star: 克隆功能完成">
-      <created>1573020954414</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1573020954414</updated>
+      <workItem from="1574610069335" duration="707000" />
     </task>
     <task id="LOCAL-00009" summary=":star: 增加阻塞器，上传过快会自动阻塞数秒后，自动重新上传">
       <created>1573024817969</created>
@@ -608,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574607430285</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="更新README 预览图">
+      <created>1574607896399</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1574607896399</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +647,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="后台管理、修改累计上传图片数量、修改管理员密码" />
     <MESSAGE value="QA" />
     <MESSAGE value="admin-btn" />
     <MESSAGE value="导出配置完成" />
@@ -671,7 +671,8 @@
     <MESSAGE value="热重载功能上线！；频率限制可自定义！" />
     <MESSAGE value="热重载按钮；重新生成配置文件按钮" />
     <MESSAGE value=":star: 热重载功能上线，后台配置更简单丰富，不需要再重启服务端" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: 热重载功能上线，后台配置更简单丰富，不需要再重启服务端" />
+    <MESSAGE value="更新README 预览图" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新README 预览图" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
