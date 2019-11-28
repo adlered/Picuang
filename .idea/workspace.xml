@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: Anti-SSRF系统">
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/main/DoubleKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/storage/DoubleKeysStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/control/MainControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/control/MainControl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,6 +182,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PicuangApplication">
+    <configuration name="DoubleKeys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pers.adlered.picuang.tool.double_keys.main.DoubleKeys" />
+      <module name="picuang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.adlered.picuang.tool.double_keys.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HttpOrHttpsAccess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pers.adlered.picuang.access.HttpOrHttpsAccess" />
       <module name="picuang" />
@@ -229,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DoubleKeys" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Prop" />
         <item itemvalue="Application.HttpOrHttpsAccess" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Prop" />
       </list>
     </recent_temporary>
   </component>
@@ -268,14 +282,7 @@
       <workItem from="1574591188401" duration="1110000" />
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
-      <workItem from="1574904798453" duration="4841000" />
-    </task>
-    <task id="LOCAL-00012" summary=":star: V2.0版本正式发布！">
-      <created>1573050596988</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1573050596989</updated>
+      <workItem from="1574904798453" duration="7726000" />
     </task>
     <task id="LOCAL-00013" summary=":star: V2.0版本正式发布！">
       <created>1573050623501</created>
@@ -613,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574908900987</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary=":star: 出错时删除建立的文件，以防止无效图片过多产生">
+      <created>1574910159027</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1574910159027</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +665,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="导出配置修复，导入配置完成" />
     <MESSAGE value="更新gitignore" />
     <MESSAGE value="getConf修复空指针问题" />
     <MESSAGE value="修复历史记录时间线划分问题" />
@@ -676,22 +689,31 @@
     <MESSAGE value="更新README" />
     <MESSAGE value="RESTful规范" />
     <MESSAGE value=":star: Anti-SSRF系统" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: Anti-SSRF系统" />
+    <MESSAGE value=":star: 出错时删除建立的文件，以防止无效图片过多产生" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: 出错时删除建立的文件，以防止无效图片过多产生" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java</url>
-          <line>26</line>
+          <line>27</line>
           <properties field="uploadLimiter" class="pers.adlered.picuang.controller.UploadController" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java</url>
-          <line>27</line>
+          <line>28</line>
           <properties field="cloneLimiter" class="pers.adlered.picuang.controller.UploadController" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/main/DoubleKeys.java</url>
+          <line>29</line>
+          <properties class="pers.adlered.picuang.tool.double_keys.main.DoubleKeys" method="check">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

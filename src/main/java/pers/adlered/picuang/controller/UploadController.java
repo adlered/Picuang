@@ -11,6 +11,7 @@ import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.IPUtil;
 import pers.adlered.picuang.tool.ToolBox;
+import pers.adlered.picuang.tool.double_keys.main.DoubleKeys;
 import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -97,6 +98,7 @@ public class UploadController {
     public Result clone(String url, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
+            // IP地址访问频率限制
             boolean allowed = cloneLimiter.access(addr);
             try {
                 while (!allowed) {
@@ -106,6 +108,12 @@ public class UploadController {
                 }
             } catch (InterruptedException IE) {}
             Result result = new Result();
+            // 基于IP地址的重复克隆检测限制
+            if (!DoubleKeys.check(addr, url)) {
+                result.setCode(401);
+                result.setMsg("请不要重复克隆同一张图片。你可以在右上方的\"历史\"选项找到你克隆过的图片！");
+                return result;
+            }
             if (Prop.get("adminOnly").equals("on")) {
                 Logger.log("AdminOnly mode is on! Checking user's permission...");
                 if (!logged(session)) {
