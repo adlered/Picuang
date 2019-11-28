@@ -4,7 +4,7 @@
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":star: Anti-SSRF系统">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/UploadRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/control/MainControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/simplecurrentlimiter/control/MainControl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,14 +268,7 @@
       <workItem from="1574591188401" duration="1110000" />
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
-      <workItem from="1574904798453" duration="3623000" />
-    </task>
-    <task id="LOCAL-00011" summary=":star: Update README">
-      <created>1573034202459</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1573034202459</updated>
+      <workItem from="1574904798453" duration="4841000" />
     </task>
     <task id="LOCAL-00012" summary=":star: V2.0版本正式发布！">
       <created>1573050596988</created>
@@ -613,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574905720724</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary=":star: Anti-SSRF系统">
+      <created>1574908900986</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1574908900987</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +651,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="导出配置完成" />
     <MESSAGE value="导出配置修复，导入配置完成" />
     <MESSAGE value="更新gitignore" />
     <MESSAGE value="getConf修复空指针问题" />
@@ -676,7 +675,8 @@
     <MESSAGE value="更新README 预览图" />
     <MESSAGE value="更新README" />
     <MESSAGE value="RESTful规范" />
-    <option name="LAST_COMMIT_MESSAGE" value="RESTful规范" />
+    <MESSAGE value=":star: Anti-SSRF系统" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: Anti-SSRF系统" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

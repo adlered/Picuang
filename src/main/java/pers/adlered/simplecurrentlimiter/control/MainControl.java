@@ -12,8 +12,6 @@ import pers.adlered.simplecurrentlimiter.cache.pair.CachePair;
  **/
 public class MainControl extends MainCache {
     public boolean write(String str) {
-        System.out.println("1 " + this.frequencyTime);
-        System.out.println("2 " + this.expireTime);
         boolean isOK = true;
         // 先读取查看是否已经存在
         long frequency = -1l;

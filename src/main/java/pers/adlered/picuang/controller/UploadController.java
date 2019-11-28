@@ -123,11 +123,11 @@ public class UploadController {
                 result.setMsg("Anti-SSRF系统检测到您输入了内网地址，请检查！");
                 return result;
             }
+            File dest = null;
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 Logger.log("SuffixName: " + suffixName);
                 String time = ToolBox.getDirByTime();
-                File dest = null;
                 if (ToolBox.isPic(suffixName)) {
                     dest = ToolBox.generatePicFile(suffixName, time, addr);
                 } else {
@@ -160,6 +160,11 @@ public class UploadController {
                 Prop.set("imageUploadedCount", String.valueOf(count));
                 return result;
             } catch (Exception e) {
+                // 出错时删除建立的文件，以防止无效图片过多产生
+                if (dest != null) {
+                    Logger.log("An exception has caught, deleting picture cache...");
+                    dest.delete();
+                }
                 result.setCode(500);
                 result.setMsg(e.getClass().toGenericString().replaceAll("public class ", ""));
                 return result;
