@@ -19,7 +19,7 @@ import java.util.Set;
 @Component
 public class Prop {
     // 版本号
-    private static final String version = "V2.3";
+    private static final String version = "V2.4";
 
     private static Properties properties = new Properties();
 

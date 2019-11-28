@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/main/DoubleKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/storage/DoubleKeysStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/prop/Prop.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -282,14 +279,7 @@
       <workItem from="1574591188401" duration="1110000" />
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
-      <workItem from="1574904798453" duration="7726000" />
-    </task>
-    <task id="LOCAL-00013" summary=":star: V2.0版本正式发布！">
-      <created>1573050623501</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1573050623501</updated>
+      <workItem from="1574904798453" duration="7969000" />
     </task>
     <task id="LOCAL-00014" summary=":star: V2.0版本正式发布！">
       <created>1573050875707</created>
@@ -627,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574910159027</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary=":star: 基于IP地址的重复克隆检测限制">
+      <created>1574913319956</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1574913319956</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +662,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="更新gitignore" />
     <MESSAGE value="getConf修复空指针问题" />
     <MESSAGE value="修复历史记录时间线划分问题" />
     <MESSAGE value="仅管理员上传按钮" />
@@ -690,23 +686,12 @@
     <MESSAGE value="RESTful规范" />
     <MESSAGE value=":star: Anti-SSRF系统" />
     <MESSAGE value=":star: 出错时删除建立的文件，以防止无效图片过多产生" />
-    <option name="LAST_COMMIT_MESSAGE" value=":star: 出错时删除建立的文件，以防止无效图片过多产生" />
+    <MESSAGE value=":star: 基于IP地址的重复克隆检测限制" />
+    <option name="LAST_COMMIT_MESSAGE" value=":star: 基于IP地址的重复克隆检测限制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java</url>
-          <line>27</line>
-          <properties field="uploadLimiter" class="pers.adlered.picuang.controller.UploadController" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java</url>
-          <line>28</line>
-          <properties field="cloneLimiter" class="pers.adlered.picuang.controller.UploadController" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/main/DoubleKeys.java</url>
           <line>29</line>
