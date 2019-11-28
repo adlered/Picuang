@@ -1,9 +1,9 @@
 package pers.adlered.picuang.result;
 
 public class Result<T> {
-    private Integer code;
-    private String msg;
-    private T data;
+    private Integer code = 404;
+    private String msg = "";
+    private T data = (T) "";
 
     public Result() {
         super();
