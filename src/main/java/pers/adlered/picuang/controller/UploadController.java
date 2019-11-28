@@ -116,6 +116,13 @@ public class UploadController {
                 }
                 Logger.log("Admin is uploading...");
             }
+            String regex = "(http(s)?://)?(localhost|(127|192|172|10)\\.).*";
+            Matcher matcher = Pattern.compile(regex).matcher(url);
+            if (matcher.matches()) {
+                result.setCode(401);
+                result.setMsg("Anti-SSRF系统检测到您输入了内网地址，请检查！");
+                return result;
+            }
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 Logger.log("SuffixName: " + suffixName);
@@ -143,9 +150,9 @@ public class UploadController {
                 fileOutputStream.close();
                 bufferedInputStream.close();
                 Pattern p = Pattern.compile("(?<=http://|\\.)[^.]*?\\.(com|cn|net|org|biz|info|cc|tv)", Pattern.CASE_INSENSITIVE);
-                Matcher matcher = p.matcher(url);
-                matcher.find();
-                result.setData("From " + matcher.group());
+                Matcher m = p.matcher(url);
+                m.find();
+                result.setData("From " + m.group());
                 result.setCode(200);
                 result.setMsg("/uploadImages/" + addr + "/" + time + dest.getName());
                 int count = Integer.parseInt(Prop.get("imageUploadedCount"));
@@ -154,7 +161,7 @@ public class UploadController {
                 return result;
             } catch (Exception e) {
                 result.setCode(500);
-                result.setMsg(e.getClass().toGenericString());
+                result.setMsg(e.getClass().toGenericString().replaceAll("public class ", ""));
                 return result;
             }
         }
