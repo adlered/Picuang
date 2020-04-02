@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.adlered.picuang.controller.api.bean.PicProp;
+import pers.adlered.picuang.log.Logger;
 import pers.adlered.picuang.tool.IPUtil;
 import pers.adlered.picuang.tool.ToolBox;
 
@@ -26,14 +27,14 @@ public class History {
     public List<PicProp> list(HttpServletRequest request, String year, String month, String day) {
         List<PicProp> list = new ArrayList<>();
         File file = new File(getHome(request) + year + "/" + month + "/" + day + "/");
-        File[] hour = file.listFiles();
+        File[] hour = listFiles(file);
         for (File i : hour) {
             if (i.isDirectory()) {
                 String dir = getHome(request) + year + "/" + month + "/" + day + "/" + i.getName() + "/";
-                File[] minute = new File(dir).listFiles();
+                File[] minute = listFiles(new File(dir));
                 for (File j : minute) {
                     String filesDir = dir + j.getName() + "/";
-                    File[] files = new File(filesDir).listFiles();
+                    File[] files = listFiles(new File(filesDir));
                     try {
                         for (File k : files) {
                             if (k.isFile()) {
@@ -46,6 +47,7 @@ public class History {
                             }
                         }
                     } catch (NullPointerException NPE) {
+                        logNpe();
                         continue;
                     }
                 }
@@ -57,9 +59,8 @@ public class History {
     @RequestMapping("/api/day")
     @ResponseBody
     public List<String> day(HttpServletRequest request, String year, String month) {
-        StringBuilder sb = new StringBuilder();
         File file = new File(getHome(request) + year + "/" + month + "/");
-        File[] list = file.listFiles();
+        File[] list = listFiles(file);
         List<String> lists = new ArrayList<>();
         try {
             for (File i : list) {
@@ -68,6 +69,7 @@ public class History {
                 }
             }
         } catch (NullPointerException NPE) {
+            logNpe();
         }
         return lists;
     }
@@ -77,7 +79,7 @@ public class History {
     public List<String> month(HttpServletRequest request, String year) {
         StringBuilder sb = new StringBuilder();
         File file = new File(getHome(request) + year + "/");
-        File[] list = file.listFiles();
+        File[] list = listFiles(file);
         List<String> lists = new ArrayList<>();
         try {
             for (File i : list) {
@@ -93,9 +95,8 @@ public class History {
     @RequestMapping("/api/year")
     @ResponseBody
     public List<String> year(HttpServletRequest request) {
-        StringBuilder sb = new StringBuilder();
         File file = new File(getHome(request));
-        File[] list = file.listFiles();
+        File[] list = listFiles(file);
         List<String> lists = new ArrayList<>();
         try {
             for (File i : list) {
@@ -111,5 +112,14 @@ public class History {
     private String getHome(HttpServletRequest request) {
         String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
         return ToolBox.getPicStoreDir() + addr + "/";
+    }
+
+    private File[] listFiles(File file) {
+        File[] files = file.listFiles();
+        return files == null ? new File[0] : files;
+    }
+
+    private void logNpe() {
+        Logger.log(String.format("A null pointer exception occurred in [%s]", this.getClass().getName()));
     }
 }
