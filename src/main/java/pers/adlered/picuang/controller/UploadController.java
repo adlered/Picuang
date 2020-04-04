@@ -35,23 +35,10 @@ public class UploadController {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();
-            if (Prop.get("adminOnly").equals("on")) {
-                Logger.log("AdminOnly mode is on! Checking user's permission...");
-                if (!logged(session)) {
-                    Logger.log("User not logged! Uploading terminated.");
-                    result.setCode(401);
-                    result.setMsg("管理员禁止了普通用户上传文件！");
-                    return result;
-                }
-                Logger.log("Admin is uploading...");
+            if (adminOnly(session, result)) {
+                return result;
             }
-            try {
-                while (!allowed) {
-                    allowed = uploadLimiter.access(addr);
-                    System.out.print(".");
-                    Thread.sleep(100);
-                }
-            } catch (InterruptedException IE) {}
+            sleep(allowed, uploadLimiter.access(addr));
             //是否上传了文件
             if (file.isEmpty()) {
                 result.setCode(406);
@@ -99,29 +86,16 @@ public class UploadController {
         synchronized (this) {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = cloneLimiter.access(addr);
-            try {
-                while (!allowed) {
-                    allowed = cloneLimiter.access(addr);
-                    System.out.print(".");
-                    Thread.sleep(100);
-                }
-            } catch (InterruptedException IE) {}
+            sleep(allowed, cloneLimiter.access(addr));
             Result result = new Result();
-            if (Prop.get("adminOnly").equals("on")) {
-                Logger.log("AdminOnly mode is on! Checking user's permission...");
-                if (!logged(session)) {
-                    Logger.log("User not logged! Uploading terminated.");
-                    result.setCode(401);
-                    result.setMsg("管理员禁止了普通用户上传文件！");
-                    return result;
-                }
-                Logger.log("Admin is uploading...");
+            if (adminOnly(session, result)) {
+                return result;
             }
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 Logger.log("SuffixName: " + suffixName);
                 String time = ToolBox.getDirByTime();
-                File dest = null;
+                File dest;
                 if (ToolBox.isPic(suffixName)) {
                     dest = ToolBox.generatePicFile(suffixName, time, addr);
                 } else {
@@ -136,7 +110,7 @@ public class UploadController {
                         "",
                         null);
                 byte[] bytes = new byte[1024];
-                int len = -1;
+                int len;
                 while ((len = bufferedInputStream.read(bytes)) != -1) {
                     fileOutputStream.write(bytes, 0, len);
                 }
@@ -161,13 +135,38 @@ public class UploadController {
         }
     }
 
+    private boolean adminOnly(HttpSession session, Result result) {
+        if (Prop.get("adminOnly").equals("on")) {
+            Logger.log("AdminOnly mode is on! Checking user's permission...");
+            if (!logged(session)) {
+                Logger.log("User not logged! Uploading terminated.");
+                result.setCode(401);
+                result.setMsg("管理员禁止了普通用户上传文件！");
+                return true;
+            }
+            Logger.log("Admin is uploading...");
+        }
+        return false;
+    }
+
+    private void sleep(boolean allowed, boolean access) {
+        try {
+            while (!allowed) {
+                allowed = access;
+                System.out.print(".");
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException IE) {
+        }
+    }
+
     /**
      * 检查管理员是否已登录
      *
      * @param session
      * @return
      */
-    public boolean logged(HttpSession session) {
+    private boolean logged(HttpSession session) {
         boolean logged = false;
         try {
             logged = Boolean.parseBoolean(session.getAttribute("admin").toString());
