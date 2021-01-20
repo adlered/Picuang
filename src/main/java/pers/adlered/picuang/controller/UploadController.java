@@ -24,8 +24,8 @@ import java.util.regex.Pattern;
 
 @Controller
 public class UploadController {
-    SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
-    SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
+    public static SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
+    public static SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
 
     @RequestMapping("/upload")
     @ResponseBody
