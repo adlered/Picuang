@@ -11,6 +11,7 @@ import pers.adlered.picuang.tool.ToolBox;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -53,6 +54,7 @@ public class History {
                 }
             }
         }
+        Collections.reverse(list);
         return list;
     }
 
@@ -71,6 +73,7 @@ public class History {
         } catch (NullPointerException NPE) {
             logNpe();
         }
+        Collections.reverse(lists);
         return lists;
     }
 
@@ -89,6 +92,7 @@ public class History {
             }
         } catch (NullPointerException NPE) {
         }
+        Collections.reverse(lists);
         return lists;
     }
 
@@ -106,6 +110,7 @@ public class History {
             }
         } catch (NullPointerException NPE) {
         }
+        Collections.reverse(lists);
         return lists;
     }
 
