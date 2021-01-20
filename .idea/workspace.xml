@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,21 +295,7 @@
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
       <workItem from="1574904798453" duration="7969000" />
-      <workItem from="1611135187063" duration="919000" />
-    </task>
-    <task id="LOCAL-00015" summary="修改报错信息">
-      <created>1573092719783</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1573092719783</updated>
-    </task>
-    <task id="LOCAL-00016" summary="增加Notification浏览器通知功能">
-      <created>1573094009477</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1573094009478</updated>
+      <workItem from="1611135187063" duration="1247000" />
     </task>
     <task id="LOCAL-00017" summary="Clone功能规则放宽">
       <created>1573094094382</created>
@@ -641,7 +626,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611135418945</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary=":wrench: 修复历史记录顺序不正确的问题">
+      <created>1611136219738</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1611136219738</updated>
+    </task>
+    <task id="LOCAL-00065" summary=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题">
+      <created>1611136407986</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1611136407986</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,8 +677,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修复历史记录时间线划分问题" />
-    <MESSAGE value="仅管理员上传按钮" />
     <MESSAGE value="仅管理员上传功能完成" />
     <MESSAGE value="配置导入提示" />
     <MESSAGE value="config.ini数据安全性" />
@@ -703,7 +700,9 @@
     <MESSAGE value=":star: 出错时删除建立的文件，以防止无效图片过多产生" />
     <MESSAGE value=":star: 基于IP地址的重复克隆检测限制" />
     <MESSAGE value=":art: 合并V2.3分支" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: 合并V2.3分支" />
+    <MESSAGE value=":wrench: 修复历史记录顺序不正确的问题" />
+    <MESSAGE value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -718,7 +717,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/api/History.java</url>
-          <line>99</line>
+          <line>102</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
