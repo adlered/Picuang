@@ -14,20 +14,20 @@ public class MainControl extends MainCache {
     public boolean write(String str) {
         boolean isOK = true;
         // 先读取查看是否已经存在
-        long frequency = -1l;
-        long timeStamp = -1l;
+        long frequency;
+        long timeStamp;
         long currentTimeStamp = System.currentTimeMillis();
         CachePair verifyPair = this.cachePairMap.get(str);
         if (verifyPair == null) {
-            frequency = 1l;
+            frequency = 1L;
             timeStamp = currentTimeStamp;
         } else {
-            frequency = verifyPair.getFrequency() + 1l;
+            frequency = verifyPair.getFrequency() + 1L;
             timeStamp = verifyPair.getTimeStamp();
             // 超时刷新
             if (this.expireTime != -1) {
                 if ((currentTimeStamp - timeStamp) > this.expireTime) {
-                    frequency = 1l;
+                    frequency = 1L;
                     timeStamp = currentTimeStamp;
                 }
             }

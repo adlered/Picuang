@@ -11,7 +11,6 @@ import pers.adlered.picuang.prop.Prop;
 import pers.adlered.picuang.result.Result;
 import pers.adlered.picuang.tool.IPUtil;
 import pers.adlered.picuang.tool.ToolBox;
-import pers.adlered.picuang.tool.double_keys.main.DoubleKeys;
 import pers.adlered.simplecurrentlimiter.main.SimpleCurrentLimiter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,33 +24,21 @@ import java.util.regex.Pattern;
 
 @Controller
 public class UploadController {
-    public static SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
-    public static SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
+    SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
+    SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
 
     @RequestMapping("/upload")
     @ResponseBody
     public Result upload(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
+            uploadLimiter.setExpireTimeMilli(500);
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
             Result result = new Result();
-            if (Prop.get("adminOnly").equals("on")) {
-                Logger.log("AdminOnly mode is on! Checking user's permission...");
-                if (!logged(session)) {
-                    Logger.log("User not logged! Uploading terminated.");
-                    result.setCode(401);
-                    result.setMsg("管理员禁止了普通用户上传文件！");
-                    return result;
-                }
-                Logger.log("Admin is uploading...");
+            if (adminOnly(session, result)) {
+                return result;
             }
-            try {
-                while (!allowed) {
-                    allowed = uploadLimiter.access(addr);
-                    System.out.print(".");
-                    Thread.sleep(100);
-                }
-            } catch (InterruptedException IE) {}
+            sleep(allowed, uploadLimiter.access(addr));
             //是否上传了文件
             if (file.isEmpty()) {
                 result.setCode(406);
@@ -98,44 +85,17 @@ public class UploadController {
     public Result clone(String url, HttpServletRequest request, HttpSession session) {
         synchronized (this) {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
-            // IP地址访问频率限制
             boolean allowed = cloneLimiter.access(addr);
-            try {
-                while (!allowed) {
-                    allowed = cloneLimiter.access(addr);
-                    System.out.print(".");
-                    Thread.sleep(100);
-                }
-            } catch (InterruptedException IE) {}
+            sleep(allowed, cloneLimiter.access(addr));
             Result result = new Result();
-            // 基于IP地址的重复克隆检测限制
-            if (!DoubleKeys.check(addr, url)) {
-                result.setCode(401);
-                result.setMsg("请不要重复克隆同一张图片。你可以在右上方的\"历史\"选项找到你克隆过的图片！");
+            if (adminOnly(session, result)) {
                 return result;
             }
-            if (Prop.get("adminOnly").equals("on")) {
-                Logger.log("AdminOnly mode is on! Checking user's permission...");
-                if (!logged(session)) {
-                    Logger.log("User not logged! Uploading terminated.");
-                    result.setCode(401);
-                    result.setMsg("管理员禁止了普通用户上传文件！");
-                    return result;
-                }
-                Logger.log("Admin is uploading...");
-            }
-            String regex = "(http(s)?://)?(localhost|(127|192|172|10)\\.).*";
-            Matcher matcher = Pattern.compile(regex).matcher(url);
-            if (matcher.matches()) {
-                result.setCode(401);
-                result.setMsg("Anti-SSRF系统检测到您输入了内网地址，请检查！");
-                return result;
-            }
-            File dest = null;
             try {
                 String suffixName = ToolBox.getSuffixName(url);
                 Logger.log("SuffixName: " + suffixName);
                 String time = ToolBox.getDirByTime();
+                File dest;
                 if (ToolBox.isPic(suffixName)) {
                     dest = ToolBox.generatePicFile(suffixName, time, addr);
                 } else {
@@ -150,7 +110,7 @@ public class UploadController {
                         "",
                         null);
                 byte[] bytes = new byte[1024];
-                int len = -1;
+                int len;
                 while ((len = bufferedInputStream.read(bytes)) != -1) {
                     fileOutputStream.write(bytes, 0, len);
                 }
@@ -158,9 +118,9 @@ public class UploadController {
                 fileOutputStream.close();
                 bufferedInputStream.close();
                 Pattern p = Pattern.compile("(?<=http://|\\.)[^.]*?\\.(com|cn|net|org|biz|info|cc|tv)", Pattern.CASE_INSENSITIVE);
-                Matcher m = p.matcher(url);
-                m.find();
-                result.setData("From " + m.group());
+                Matcher matcher = p.matcher(url);
+                matcher.find();
+                result.setData("From " + matcher.group());
                 result.setCode(200);
                 result.setMsg("/uploadImages/" + addr + "/" + time + dest.getName());
                 int count = Integer.parseInt(Prop.get("imageUploadedCount"));
@@ -168,15 +128,35 @@ public class UploadController {
                 Prop.set("imageUploadedCount", String.valueOf(count));
                 return result;
             } catch (Exception e) {
-                // 出错时删除建立的文件，以防止无效图片过多产生
-                if (dest != null) {
-                    Logger.log("An exception has caught, deleting picture cache...");
-                    dest.delete();
-                }
                 result.setCode(500);
-                result.setMsg(e.getClass().toGenericString().replaceAll("public class ", ""));
+                result.setMsg(e.getClass().toGenericString());
                 return result;
             }
+        }
+    }
+
+    private boolean adminOnly(HttpSession session, Result result) {
+        if (Prop.get("adminOnly").equals("on")) {
+            Logger.log("AdminOnly mode is on! Checking user's permission...");
+            if (!logged(session)) {
+                Logger.log("User not logged! Uploading terminated.");
+                result.setCode(401);
+                result.setMsg("管理员禁止了普通用户上传文件！");
+                return true;
+            }
+            Logger.log("Admin is uploading...");
+        }
+        return false;
+    }
+
+    private void sleep(boolean allowed, boolean access) {
+        try {
+            while (!allowed) {
+                allowed = access;
+                System.out.print(".");
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException IE) {
         }
     }
 
@@ -186,7 +166,7 @@ public class UploadController {
      * @param session
      * @return
      */
-    public boolean logged(HttpSession session) {
+    private boolean logged(HttpSession session) {
         boolean logged = false;
         try {
             logged = Boolean.parseBoolean(session.getAttribute("admin").toString());
