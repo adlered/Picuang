@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-v2.3" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -295,21 +295,7 @@
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
       <workItem from="1574904798453" duration="7969000" />
-      <workItem from="1611135187063" duration="1247000" />
-    </task>
-    <task id="LOCAL-00017" summary="Clone功能规则放宽">
-      <created>1573094094382</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1573094094382</updated>
-    </task>
-    <task id="LOCAL-00018" summary="删除config.ini，增加gitignore">
-      <created>1573094190842</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1573094190842</updated>
+      <workItem from="1611135187063" duration="3826000" />
     </task>
     <task id="LOCAL-00019" summary="增加Inner Notification">
       <created>1573099646104</created>
@@ -640,7 +626,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611136407986</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary=":art: 去除作者版权信息">
+      <created>1611136465181</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1611136465181</updated>
+    </task>
+    <task id="LOCAL-00067" summary=":art: 更新README">
+      <created>1611136566562</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1611136566562</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,8 +677,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="仅管理员上传功能完成" />
-    <MESSAGE value="配置导入提示" />
     <MESSAGE value="config.ini数据安全性" />
     <MESSAGE value="Prop启动时自动生成" />
     <MESSAGE value="Update README" />
@@ -702,7 +700,9 @@
     <MESSAGE value=":art: 合并V2.3分支" />
     <MESSAGE value=":wrench: 修复历史记录顺序不正确的问题" />
     <MESSAGE value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
+    <MESSAGE value=":art: 去除作者版权信息" />
+    <MESSAGE value=":art: 更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value=":art: 更新README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
