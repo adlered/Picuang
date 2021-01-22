@@ -51,9 +51,9 @@ function showConfig() {
                 }
                 $("#adminOnlyStatus").html(adminOnly);
             });
-        $("#logout").show(200);
-        $("#config").show(200);
-    }, 100);
+        $("#logout").show(300);
+        $("#config").show(300);
+    }, 200);
 }
 
 function getHelp(key) {
