@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/background/load.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/lazyload.min.js" afterDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":wrench: “历史”使用lazyload，减轻服务端压力">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/history/histories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/history/histories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/admin/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -463,13 +460,6 @@
       <workItem from="1574904798453" duration="7969000" />
       <workItem from="1611135187063" duration="1247000" />
     </task>
-    <task id="LOCAL-00024" summary="去掉“其它图片不受影响”">
-      <created>1573104094159</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1573104094159</updated>
-    </task>
     <task id="LOCAL-00025" summary="站内提醒favicon">
       <created>1573104289802</created>
       <option name="number" value="00025" />
@@ -806,7 +796,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611298590880</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary=":wrench: “历史”使用lazyload，减轻服务端压力">
+      <created>1611300273158</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1611300273158</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -843,7 +840,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="config.ini数据安全性" />
     <MESSAGE value="Prop启动时自动生成" />
     <MESSAGE value="Update README" />
     <MESSAGE value="修改版本号" />
@@ -868,7 +864,8 @@
     <MESSAGE value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
     <MESSAGE value=":art: 提供以管理员身份校验的上传接口（适配作为第三方图床的需求）" />
     <MESSAGE value=":art: UI调优" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: UI调优" />
+    <MESSAGE value=":wrench: “历史”使用lazyload，减轻服务端压力" />
+    <option name="LAST_COMMIT_MESSAGE" value=":wrench: “历史”使用lazyload，减轻服务端压力" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
