@@ -27,18 +27,52 @@ public class UploadController {
     public static SimpleCurrentLimiter uploadLimiter = new SimpleCurrentLimiter(1, 1);
     public static SimpleCurrentLimiter cloneLimiter = new SimpleCurrentLimiter(3, 1);
 
+    /**
+     * 携带管理员密码进行图片上传
+     * @param file
+     * @param request
+     * @param password
+     * @return
+     */
+    @RequestMapping("/upload/auth")
+    @ResponseBody
+    public Result uploadInAuth(@PathVariable MultipartFile file, HttpServletRequest request, String password) {
+        String truePassword = Prop.get("password");
+        if (truePassword.equals(password)) {
+            return upload(file, request);
+        }
+        Result result = new Result();
+        result.setCode(500);
+        result.setMsg("Invalid password.");
+        return result;
+    }
+
     @RequestMapping("/upload")
     @ResponseBody
     public Result upload(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session) {
+        Result result = new Result();
+        if (adminOnly(session, result)) {
+            result.setCode(500);
+            result.setMsg("Admin only upload.");
+            return result;
+        }
+        return upload(file, request);
+    }
+
+    public Result upload(@PathVariable MultipartFile file, HttpServletRequest request) {
         synchronized (this) {
             uploadLimiter.setExpireTimeMilli(500);
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = uploadLimiter.access(addr);
-            Result result = new Result();
-            if (adminOnly(session, result)) {
-                return result;
+            try {
+                while (!allowed) {
+                    allowed = uploadLimiter.access(addr);
+                    System.out.print(".");
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException IE) {
             }
-            sleep(allowed, uploadLimiter.access(addr));
+            Result result = new Result();
             //是否上传了文件
             if (file.isEmpty()) {
                 result.setCode(406);
@@ -86,7 +120,14 @@ public class UploadController {
         synchronized (this) {
             String addr = IPUtil.getIpAddr(request).replaceAll("\\.", "/").replaceAll(":", "/");
             boolean allowed = cloneLimiter.access(addr);
-            sleep(allowed, cloneLimiter.access(addr));
+            try {
+                while (!allowed) {
+                    allowed = cloneLimiter.access(addr);
+                    System.out.print(".");
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException IE) {
+            }
             Result result = new Result();
             if (adminOnly(session, result)) {
                 return result;
@@ -147,17 +188,6 @@ public class UploadController {
             Logger.log("Admin is uploading...");
         }
         return false;
-    }
-
-    private void sleep(boolean allowed, boolean access) {
-        try {
-            while (!allowed) {
-                allowed = access;
-                System.out.print(".");
-                Thread.sleep(100);
-            }
-        } catch (InterruptedException IE) {
-        }
     }
 
     /**

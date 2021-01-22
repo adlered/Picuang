@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev-v2.3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
@@ -165,6 +174,166 @@
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/java/pers/adlered" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adler\IdeaProjects\Picuang" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="FF94675EAAC390F544E2B7CBD7FF95A1" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/upload/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="multipart/form-data; boundary=WebAppBoundary" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123456" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="FF94675EAAC390F544E2B7CBD7FF95A1" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/upload/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="multipart/form-data; boundary=WebAppBoundary" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123456" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="FF94675EAAC390F544E2B7CBD7FF95A1" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/upload/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="multipart/form-data; boundary=WebAppBoundary" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="password" />
+                <option name="value" value="123123" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="-1" />
+                <option name="domain" value="localhost" />
+                <option name="name" value="JSESSIONID" />
+                <option name="path" value="/" />
+                <option name="value" value="FF94675EAAC390F544E2B7CBD7FF95A1" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/upload/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="multipart/form-data; boundary=WebAppBoundary" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/upload" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="multipart/form-data; boundary=WebAppBoundary" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PicuangApplication">
     <configuration name="DoubleKeys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -173,19 +342,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pers.adlered.picuang.tool.double_keys.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpOrHttpsAccess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pers.adlered.picuang.access.HttpOrHttpsAccess" />
-      <module name="picuang" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pers.adlered.picuang.access.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,6 +401,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="rest-api_4#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="PicuangApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="picuang" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.adlered.picuang.PicuangApplication" />
@@ -254,11 +413,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api_4#1" />
         <item itemvalue="Application.PicuangApplication" />
         <item itemvalue="Application.DoubleKeys" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Prop" />
-        <item itemvalue="Application.HttpOrHttpsAccess" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +454,21 @@
       <workItem from="1574610069335" duration="707000" />
       <workItem from="1574668154306" duration="668000" />
       <workItem from="1574904798453" duration="7969000" />
-      <workItem from="1611135187063" duration="3826000" />
+      <workItem from="1611135187063" duration="1247000" />
+    </task>
+    <task id="LOCAL-00017" summary="Clone功能规则放宽">
+      <created>1573094094382</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1573094094382</updated>
+    </task>
+    <task id="LOCAL-00018" summary="删除config.ini，增加gitignore">
+      <created>1573094190842</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1573094190842</updated>
     </task>
     <task id="LOCAL-00019" summary="增加Inner Notification">
       <created>1573099646104</created>
@@ -626,21 +799,7 @@
       <option name="project" value="LOCAL" />
       <updated>1611136407986</updated>
     </task>
-    <task id="LOCAL-00066" summary=":art: 去除作者版权信息">
-      <created>1611136465181</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1611136465181</updated>
-    </task>
-    <task id="LOCAL-00067" summary=":art: 更新README">
-      <created>1611136566562</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1611136566562</updated>
-    </task>
-    <option name="localTasksCounter" value="68" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,6 +836,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="仅管理员上传功能完成" />
+    <MESSAGE value="配置导入提示" />
     <MESSAGE value="config.ini数据安全性" />
     <MESSAGE value="Prop启动时自动生成" />
     <MESSAGE value="Update README" />
@@ -700,9 +861,7 @@
     <MESSAGE value=":art: 合并V2.3分支" />
     <MESSAGE value=":wrench: 修复历史记录顺序不正确的问题" />
     <MESSAGE value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
-    <MESSAGE value=":art: 去除作者版权信息" />
-    <MESSAGE value=":art: 更新README" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: 更新README" />
+    <option name="LAST_COMMIT_MESSAGE" value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,7 +869,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/pers/adlered/picuang/tool/double_keys/main/DoubleKeys.java</url>
           <line>29</line>
-          <properties class="pers.adlered.picuang.tool.double_keys.main.DoubleKeys">
+          <properties class="pers.adlered.picuang.tool.double_keys.main.DoubleKeys" method="check">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="3" />
