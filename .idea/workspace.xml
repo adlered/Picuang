@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":art: 提供以管理员身份校验的上传接口（适配作为第三方图床的需求）">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/pjax.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,13 +455,6 @@
       <workItem from="1574904798453" duration="7969000" />
       <workItem from="1611135187063" duration="1247000" />
     </task>
-    <task id="LOCAL-00018" summary="删除config.ini，增加gitignore">
-      <created>1573094190842</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1573094190842</updated>
-    </task>
     <task id="LOCAL-00019" summary="增加Inner Notification">
       <created>1573099646104</created>
       <option name="number" value="00019" />
@@ -802,7 +791,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611292467022</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary=":art: UI调优">
+      <created>1611295899753</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1611295899753</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -839,7 +835,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="配置导入提示" />
     <MESSAGE value="config.ini数据安全性" />
     <MESSAGE value="Prop启动时自动生成" />
     <MESSAGE value="Update README" />
@@ -864,7 +859,8 @@
     <MESSAGE value=":wrench: 修复历史记录顺序不正确的问题" />
     <MESSAGE value=":wrench: 修复静态资源为绝对目录导致Picuang在子目录无法正常加载的问题" />
     <MESSAGE value=":art: 提供以管理员身份校验的上传接口（适配作为第三方图床的需求）" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: 提供以管理员身份校验的上传接口（适配作为第三方图床的需求）" />
+    <MESSAGE value=":art: UI调优" />
+    <option name="LAST_COMMIT_MESSAGE" value=":art: UI调优" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

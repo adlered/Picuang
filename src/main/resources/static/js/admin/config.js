@@ -52,7 +52,7 @@ function showConfig() {
                 $("#adminOnlyStatus").html(adminOnly);
             });
         $("#logout").show(200);
-        $("#config").show(500);
+        $("#config").show(400);
     }, 250);
 }
 

@@ -55,7 +55,7 @@ function logout() {
 
 function showLogin() {
     $("#message").html("<div class='row'><div class='col-lg-12'><div class='input-group'><input id='admin-password' class='form-control' placeholder='请输入管理员密码' type='password'><span class='input-group-btn'><button id='admin-button' class='btn btn-default' type='button' onclick='adminLogin()'><i id='admin-icon' class='glyphicon glyphicon-record'></i></button></span></div></div></div>");
-    $("#message").fadeIn(1000);
+    $("#message").fadeIn(500);
     $("#admin-password").keyup(function (event) {
         if (event.keyCode === 13) {
             adminLogin();
