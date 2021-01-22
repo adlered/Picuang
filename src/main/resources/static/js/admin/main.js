@@ -45,7 +45,7 @@ function adminLogin() {
 function logout() {
     axios.get('/api/admin/logout')
         .then(function (response) {
-                location.href = "/";
+                location.reload();
             }
         );
 }
