@@ -36,7 +36,7 @@ Picuang会将用户上传的图片保存到`本地`，而非将图片上传到`�
 `Bootstrap`
 `Axios`
 
-## :mag: 体验 && 体验GIF
+## :mag: 体验
 
 [可以来这里直接体验哦~](https://pic.stackoverflow.wiki/)
 
