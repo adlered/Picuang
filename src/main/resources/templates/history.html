@@ -5,23 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>🛏Picuang - 永久免费 | 免登录图床</title>
-    <link rel="icon" href="favicon.png">
+    <link href="favicon.png" rel="icon">
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap/cover.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/clipboard.js"></script>
 
     <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 <body>
-<script>
-    $(function () {
-        $(".site-wrapper").fadeIn(1000);
-    });
-</script>
-<div class="site-wrapper" style="display: none">
+
+<div class="site-wrapper" id="siteWrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="masthead clearfix">
@@ -61,7 +58,9 @@
         </div>
     </div>
 </div>
+
 <script src="js/axios.min.js"></script>
 <script src="js/history/histories.js"></script>
+
 </body>
 </html>

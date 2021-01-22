@@ -17,11 +17,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 <body>
-<script>
-    $(function () {
-        $(".site-wrapper").fadeIn(1000);
-    });
-</script>
+
 <!-- 弹窗模态框 -->
 <div aria-labelledby="myModalLabel" class="modal fade" id="helpModal" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
@@ -36,7 +32,8 @@
     </div>
 </div>
 <!-- 模态框结束 -->
-<div class="site-wrapper" style="display: none">
+
+<div class="site-wrapper" id="siteWrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
             <div class="masthead clearfix">
@@ -145,6 +142,7 @@
         </div>
     </div>
 </div>
+
 <script src="js/user/clipboard-control.js"></script>
 <script src="js/user/click-listen.js"></script>
 <script src="js/user/common-queue.js"></script>
@@ -156,5 +154,6 @@
 <script src="js/fantastic-progress-bar-bootstrap.js"></script>
 <script src="js/admin/main.js"></script>
 <script src="js/admin/config.js"></script>
+
 </body>
 </html>
