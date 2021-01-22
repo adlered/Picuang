@@ -23,7 +23,7 @@ $(function () {
                                                 .then(function (listRes) {
                                                     $.each(listRes.data, function (key, data) {
                                                         var list = data;
-                                                        $("#" + year + "-" + month + "-" + day).append("<a href='" + data.path + "' target='_blank'><img src='" + list.path + "' style='width: auto; height: auto; max-width: 128px; max-height: 128px; margin: 8px 4px' class='img-thumbnail'></a>");
+                                                        $("#" + year + "-" + month + "-" + day).append("<a href='" + data.path + "' target='_blank'><img class='lazyload img-thumbnail' src='background/load.gif' data-src='" + list.path + "' style='width: auto; height: auto; max-width: 128px; max-height: 128px; margin: 8px 4px'></a>");
                                                         if (i == 0) {
                                                             $("#histories").prepend("" +
                                                                 "<h5>历史记录根据您的IP地址（" + data.ip + "）所生成，请及时保存，IP地址更改后历史记录将丢失。</h5>");
@@ -31,12 +31,13 @@ $(function () {
                                                         ++i;
                                                         $("#picCount").text(i);
                                                     });
+
+                                                    $(".lazyload").lazyload();
                                                 });
                                         });
                                     });
                             });
                         });
                 });
-            }
-        );
+        });
 });
