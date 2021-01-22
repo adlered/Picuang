@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,13 +457,6 @@
       <workItem from="1574904798453" duration="7969000" />
       <workItem from="1611135187063" duration="1247000" />
     </task>
-    <task id="LOCAL-00019" summary="增加Inner Notification">
-      <created>1573099646104</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1573099646104</updated>
-    </task>
     <task id="LOCAL-00020" summary="增加BMP/ICO/TIFF Content-Type">
       <created>1573103507540</created>
       <option name="number" value="00020" />
@@ -798,7 +793,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611295899753</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary=":art: UI调优">
+      <created>1611296223876</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1611296223877</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

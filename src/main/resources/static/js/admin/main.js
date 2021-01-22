@@ -28,16 +28,13 @@ function adminLogin() {
     axios.post('/api/admin/login', data)
         .then(function (response) {
                 if (response.data.code === 200) {
-                    $("#admin-password").css("border-color", "green");
-                    $("#admin-button").css("border-color", "green");
                     $("#admin-icon").removeClass();
                     $("#admin-icon").addClass("glyphicon glyphicon-ok");
-                    $("#admin-password").hide(500);
-                    $("#admin-button").hide(500);
+                    $("#admin-password").hide(200);
+                    $("#admin-button").hide(200);
                     showConfig();
                 } else {
                     $("#admin-password").css("border-color", "red");
-                    $("#admin-button").css("border-color", "red");
                     $("#admin-icon").removeClass();
                     $("#admin-icon").addClass("glyphicon glyphicon-remove");
                 }
@@ -54,7 +51,7 @@ function logout() {
 }
 
 function showLogin() {
-    $("#message").html("<div class='row'><div class='col-lg-12'><div class='input-group'><input id='admin-password' class='form-control' placeholder='请输入管理员密码' type='password'><span class='input-group-btn'><button id='admin-button' class='btn btn-default' type='button' onclick='adminLogin()'><i id='admin-icon' class='glyphicon glyphicon-record'></i></button></span></div></div></div>");
+    $("#message").html("<div class='row'><div class='col-lg-12'><div class='input-group'><input id='admin-password' class='form-control' placeholder='请输入管理员密码' type='password'><span class='input-group-btn'><button id='admin-button' class='btn btn-default' type='button' onclick='adminLogin()'><i id='admin-icon' class='glyphicon glyphicon-lock'></i></button></span></div></div></div>");
     $("#message").fadeIn(500);
     $("#admin-password").keyup(function (event) {
         if (event.keyCode === 13) {

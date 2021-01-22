@@ -52,8 +52,8 @@ function showConfig() {
                 $("#adminOnlyStatus").html(adminOnly);
             });
         $("#logout").show(200);
-        $("#config").show(400);
-    }, 250);
+        $("#config").show(200);
+    }, 100);
 }
 
 function getHelp(key) {
