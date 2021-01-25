@@ -1,6 +1,4 @@
-$(function () {
-    window.Notification.requestPermission(function (status) {});
-
+$(function() {
     axios.get('/api/admin/getConf?conf=adminOnly')
         .then(function (response) {
             if (response.data === "on") {
@@ -17,6 +15,10 @@ $(function () {
                 $("#functions").show();
             }
         });
+})
+
+$(function () {
+    window.Notification.requestPermission(function (status) {});
 });
 
 function sendNotify(str) {
