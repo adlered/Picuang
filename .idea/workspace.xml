@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment=":wrench: 修复更新版本重载按钮不存在的Bug">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/picuang_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/picuang_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/picuang_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/picuang_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b87d8c55-1834-406c-9684-18f017a5d2d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/adlered/picuang/controller/UploadController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -451,14 +447,7 @@
       <workItem from="1574904798453" duration="7969000" />
       <workItem from="1611135187063" duration="1247000" />
       <workItem from="1611534729585" duration="777000" />
-      <workItem from="1653721098353" duration="1481000" />
-    </task>
-    <task id="LOCAL-00026" summary="自V1.2版本开始，Picuang使用Apache License">
-      <created>1573104751881</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1573104751881</updated>
+      <workItem from="1653721098353" duration="1844000" />
     </task>
     <task id="LOCAL-00027" summary="修改版本号">
       <created>1573104828370</created>
@@ -796,7 +785,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611301340060</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary=":art: 匿名访问">
+      <created>1653722923911</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1653722923911</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -833,7 +829,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update README" />
     <MESSAGE value="修改版本号" />
     <MESSAGE value="仅管理员模式提示" />
     <MESSAGE value="拖拽管理员模式适配，增加页面切换、登录框特效，管理后台QA折叠" />
@@ -858,7 +853,8 @@
     <MESSAGE value=":art: UI调优" />
     <MESSAGE value=":wrench: “历史”使用lazyload，减轻服务端压力" />
     <MESSAGE value=":wrench: 修复更新版本重载按钮不存在的Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value=":wrench: 修复更新版本重载按钮不存在的Bug" />
+    <MESSAGE value=":art: 匿名访问" />
+    <option name="LAST_COMMIT_MESSAGE" value=":art: 匿名访问" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

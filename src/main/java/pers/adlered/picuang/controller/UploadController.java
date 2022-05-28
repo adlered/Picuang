@@ -39,9 +39,7 @@ public class UploadController {
     public Result uploadInAuth(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session, String password) {
         String truePassword = Prop.get("password");
         Result result = new Result();
-        if (truePassword.isEmpty() && !adminOnly(session, result)) {
-            return upload(file, request);
-        } else if (truePassword.equals("anonymous") && !adminOnly(session, result)) {
+        if (!adminOnly(session, result)) {
             return upload(file, request);
         } else {
             if (truePassword.equals(password)) {
