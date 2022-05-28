@@ -36,12 +36,18 @@ public class UploadController {
      */
     @RequestMapping("/upload/auth")
     @ResponseBody
-    public Result uploadInAuth(@PathVariable MultipartFile file, HttpServletRequest request, String password) {
+    public Result uploadInAuth(@PathVariable MultipartFile file, HttpServletRequest request, HttpSession session, String password) {
         String truePassword = Prop.get("password");
-        if (truePassword.equals(password)) {
-            return upload(file, request);
-        }
         Result result = new Result();
+        if (truePassword.isEmpty() && !adminOnly(session, result)) {
+            return upload(file, request);
+        } else if (truePassword.equals("anonymous") && !adminOnly(session, result)) {
+            return upload(file, request);
+        } else {
+            if (truePassword.equals(password)) {
+                return upload(file, request);
+            }
+        }
         result.setCode(500);
         result.setMsg("Invalid password.");
         return result;
